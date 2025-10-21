@@ -5,43 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="400">
     <Grid Margin="12">
         <Grid.RowDefinitions> 
-            <RowDefinition Height="*"/> 
-            <RowDefinition Height="*"/> 
+            <RowDefinition Height="auto"/> 
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions> 
-            <ColumnDefinition Width="2*"/> <!--Questions-->
-            <ColumnDefinition Width="*"/> <!--Answer-->
+            <ColumnDefinition Width="*"/> 
+            <ColumnDefinition Width="*"/> 
         </Grid.ColumnDefinitions>
 
-        <!--Image-->
-        <Border Grid.Row="0" Grid.RowSpan="3" Margin="10" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <TextBlock Text="Image" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--Logo-->
+        <Border Grid.Row="0"  Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <TextBlock Text="Logo" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
 
-        <!--Question Text-->
-        <Border Grid.Row="3" Grid.RowSpan="3" Margin="10" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <TextBlock Text="Question Text" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--Title-->
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="2" >
+            <TextBlock Text="CHOOSE A CATEGORY LET'S START THE QUIZ GAME" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </Border>
 
-        <!--Answer 1-->
-        <Border Grid.Column="1" Grid.RowSpan="2" Margin="10 40 10 10" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <TextBlock Text="Answer 1" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <!--Empty-->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" >
+            <TextBlock  />
         </Border>
-        <!--Answer 2-->
-        <Border Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Margin="10 25 10 25" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <TextBlock Text="Answer 2" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        
+        <!--Category 1-->
+        <Border Grid.Row="3"  Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <TextBlock Text="Category 1" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
-        <!--Answer 3-->
-        <Border Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" Margin="10 10 10 40" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <TextBlock Text="Answer 3" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        
+        <!--Category 2-->
+        <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <TextBlock Text="Category 2" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
 
     </Grid>
