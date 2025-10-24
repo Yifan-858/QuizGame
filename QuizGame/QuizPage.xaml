@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:QuizGame"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="400"
-      Title="QuizPage">
+      Title="QuizPage"
+      Background="White">
 
     <Grid>
         <TextBlock Text="Quiz" FontSize="20" />

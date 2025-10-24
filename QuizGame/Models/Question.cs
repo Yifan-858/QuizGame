@@ -8,8 +8,14 @@ namespace QuizGame.Models
 {
     public class Question
     {
-        public string Statement { get; }
-        public string[] Answers { get; }
-        public int CorrectAnswer { get; }
+        public string Statement { get; private set; }
+        public string[] Answers { get; private set; }
+        public int CorrectAnswer { get; private set; }
+        public Question(string statement, int correctAnswer, params string[] answers )
+        {
+            Statement = statement;
+            Answers = answers;
+            CorrectAnswer = correctAnswer;
+        }
     }
 }

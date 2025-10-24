@@ -8,29 +8,31 @@ namespace QuizGame.Models
 {
     public class Quiz
     {
-        private IEnumerable<Question> _questions;
-        private string _title = string.Empty;
-        public IEnumerable<Question> Questions => _questions;
-        public string Title => _title;
-
-        public Quiz()
+        public string Title { get; private set; }
+        public List<Question> Questions { get; private set; }
+        public Random Randomizer { get; private set; }
+        public Quiz(string title = " ")
         {
-            _questions = new List<Question>();
+            Title = title;
+            Questions = new List<Question>();
+            Randomizer = new Random();
         }
 
         public Question GetRandomQuestion()
         {
-            throw new NotImplementedException("A random Question needs to be returned here!");
+            int i = Randomizer.Next(0, Questions.Count);
+            return Questions[i];
         }
 
         public void AddQuestion(string statement, int correctAnswer, params string[] answers)
         {
-            throw new NotImplementedException("Question need to be instantiated and added to list of questions here!");
+            Question newQuestion = new Question(statement, correctAnswer, answers);
+            Questions.Add(newQuestion);
         }
 
         public void RemoveQuestion(int index)
         {
-            throw new NotImplementedException("Question at requested index need to be removed here!");
+            Questions.Remove(Questions[index]);
         }
-        }
+    }
 }
