@@ -15,10 +15,22 @@ namespace QuizGame.Models
         public int SelectedAnswerIndex { get; private set; }
         public int CorrectlyAnswered { get; private set; }
         public int TotalAnswered { get; private set; }
+        public string ScoreText
+        {
+            get
+            {
+                return $"{CorrectlyAnswered} / {TotalAnswered}";
+            }
+
+            set { }
+        }
 
         public QuizViewModel()
         {
             Quiz = new Quiz("Nut Quiz");
+
+            Quiz.AddQuestion("Which nut do you like the most?", 1, "Pistashu", "Peanut", "Walnut","Almond");
+
             CurrentQuestion = Quiz.GetRandomQuestion();
             SelectedAnswerIndex = -1;
 

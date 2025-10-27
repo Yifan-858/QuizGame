@@ -10,6 +10,6 @@
       Background="White">
 
     <Grid>
-        <TextBlock Text="Quiz" FontSize="20" />
+        <local:QuizView/>
     </Grid>
 </Page>

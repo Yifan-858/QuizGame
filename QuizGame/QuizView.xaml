@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="QuizGame.QuizView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuizGame"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="400"
+             Background="White">
+    
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Logo-->
+        <Border Grid.Row="0"  Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <TextBlock Text="Logo" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <!--Question-->
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="2" >
+            <TextBlock Text="{Binding CurrentQuestion.Statement}" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+        </Border>
+
+        <!--Image-->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" >
+            <TextBlock Text="Image" />
+        </Border>
+
+        <!--Answer 1-->
+        <Border Grid.Row="3"  Grid.Column="0" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <Button x:Name="AnswerButton1" Content="{Binding CurrentQuestion.Answers[0]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
+        </Border>
+
+        <!--Answer 2-->
+        <Border Grid.Row="3" Grid.Column="1" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <Button x:Name="AnswerButton2" Content="{Binding CurrentQuestion.Answers[1]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
+        </Border>
+
+        <!--Answer 3-->
+        <Border Grid.Row="4" Grid.Column="0" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <Button x:Name="AnswerButton3" Content="{Binding CurrentQuestion.Answers[2]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
+        </Border>
+
+        <!--Answer 4-->
+        <Border Grid.Row="4" Grid.Column="1" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <Button x:Name="AnswerButton4" Content="{Binding CurrentQuestion.Answers[3]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
+        </Border>
+
+        <!--Score-->
+        <Border Grid.Row="5" Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
+            <TextBlock Text="Score" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+    </Grid>
+</UserControl>
