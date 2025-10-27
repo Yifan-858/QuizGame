@@ -35,11 +35,7 @@ namespace QuizGame
             DataContext = ViewModel;
         }
 
-        //private int currentQuestionIndex = 0;
-        //private void GetQuestionElement()
-        //{
-        //    if(currentQuestionIndex >= 
-        //}
+        
 
         private async void AnswerButton_Click(object sender, RoutedEventArgs e)
         {

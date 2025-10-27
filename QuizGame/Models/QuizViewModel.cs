@@ -15,6 +15,7 @@ namespace QuizGame.Models
         public int SelectedAnswerIndex { get; private set; }
         public int CorrectlyAnswered { get; private set; }
         public int TotalAnswered { get; private set; }
+        public string AnswerFeedback { get; private set; }
        
         public string ScoreText
         {
@@ -25,7 +26,7 @@ namespace QuizGame.Models
                 {
                     precentage = (int)((double)CorrectlyAnswered / TotalAnswered * 100);
                 }
-                return $"{CorrectlyAnswered} / {TotalAnswered} {precentage}%";
+                return $"Your score: {CorrectlyAnswered}/{TotalAnswered} Correct Rate: {precentage}%";
             }
 
             set { }
@@ -57,15 +58,23 @@ namespace QuizGame.Models
             if(CurrentQuestion.CorrectAnswer == selectedIndex)
             {
                 CorrectlyAnswered++;
+                AnswerFeedback = "Correct Answer!";
+            }
+            else
+            {
+                AnswerFeedback = "Wrong Answer!";
             }
 
             OnPropertyChanged("ScoreText");
+            OnPropertyChanged("AnswerFeedback");
         }
 
         public void NextQuestion()
         {
+            AnswerFeedback = " ";
             CurrentQuestion = Quiz.GetRandomQuestion();
             OnPropertyChanged("CurrentQuestion");
+            OnPropertyChanged("AnswerFeedback");
         }
     }
 }

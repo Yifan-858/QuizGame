@@ -20,10 +20,19 @@ namespace QuizGame.Models
             _questions = new List<Question>();
             Randomizer = new Random();
         }
+        private int previousIndex = -1;
 
         public Question GetRandomQuestion()
         {
-            int i = Randomizer.Next(0, Questions.Count);
+            int i = -1;
+
+            do
+            {
+               i = Randomizer.Next(0, Questions.Count);
+            } while (previousIndex == i);
+
+            previousIndex = i;
+
             return Questions[i];
         }
 
