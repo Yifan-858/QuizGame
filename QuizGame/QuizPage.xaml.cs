@@ -24,7 +24,6 @@ namespace QuizGame
         public QuizPage()
         {
             InitializeComponent();
-            QuizViewModel quizViewModel = new QuizViewModel();
         }
     }
 }

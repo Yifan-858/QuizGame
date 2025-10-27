@@ -15,21 +15,25 @@ namespace QuizGame.Models
         public int SelectedAnswerIndex { get; private set; }
         public int CorrectlyAnswered { get; private set; }
         public int TotalAnswered { get; private set; }
+       
         public string ScoreText
         {
             get
             {
-                return $"{CorrectlyAnswered} / {TotalAnswered}";
+                int precentage = 0;
+                if(TotalAnswered > 0)
+                {
+                    precentage = (int)((double)CorrectlyAnswered / TotalAnswered * 100);
+                }
+                return $"{CorrectlyAnswered} / {TotalAnswered} {precentage}%";
             }
 
             set { }
         }
 
-        public QuizViewModel()
+        public QuizViewModel(Quiz quiz)
         {
-            Quiz = new Quiz("Nut Quiz");
-
-            Quiz.AddQuestion("Which nut do you like the most?", 1, "Pistashu", "Peanut", "Walnut","Almond");
+            Quiz = quiz;
 
             CurrentQuestion = Quiz.GetRandomQuestion();
             SelectedAnswerIndex = -1;
@@ -44,6 +48,24 @@ namespace QuizGame.Models
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        public void CheckAnswer(int selectedIndex)
+        {
+            TotalAnswered++;
+
+            if(CurrentQuestion.CorrectAnswer == selectedIndex)
+            {
+                CorrectlyAnswered++;
+            }
+
+            OnPropertyChanged("ScoreText");
+        }
+
+        public void NextQuestion()
+        {
+            CurrentQuestion = Quiz.GetRandomQuestion();
+            OnPropertyChanged("CurrentQuestion");
         }
     }
 }

@@ -25,15 +25,33 @@ namespace QuizGame
         public QuizView()
         {
             InitializeComponent();
-            ViewModel = new QuizViewModel();
+
+            Quiz nutQuiz = new Quiz("Nut Quiz");
+            nutQuiz.AddQuestion("Which nut do you like the most?", 1, "Pistashu", "Peanut", "Walnut","Almond");
+            nutQuiz.AddQuestion("Who is the best?", 2, "Picachu", "Ditto", "Kalakala","Miu2");
+            nutQuiz.AddQuestion("Where do you live?", 0, "Gothenburg", "London", "Stockholm","Malmö");
+
+            ViewModel = new QuizViewModel(nutQuiz);
             DataContext = ViewModel;
         }
 
-        private void AnswerButton_Click(object sender, RoutedEventArgs e)
+        //private int currentQuestionIndex = 0;
+        //private void GetQuestionElement()
+        //{
+        //    if(currentQuestionIndex >= 
+        //}
+
+        private async void AnswerButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
+
             int selectedIndex = int.Parse(button.Tag.ToString());
-            //ViewModel.NextQuestion
+
+            ViewModel.CheckAnswer(selectedIndex);
+
+            await Task.Delay(1000);
+
+            ViewModel.NextQuestion();
         }
     }
 }

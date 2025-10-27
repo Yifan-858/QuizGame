@@ -8,13 +8,16 @@ namespace QuizGame.Models
 {
     public class Quiz
     {
-        public string Title { get; private set; }
-        public List<Question> Questions { get; private set; }
+        private string _title = string.Empty;
+        public string Title => _title;
+
+        private List<Question> _questions;
+        public List<Question> Questions => _questions;
         public Random Randomizer { get; private set; }
         public Quiz(string title = " ")
         {
-            Title = title;
-            Questions = new List<Question>();
+            _title = title;
+            _questions = new List<Question>();
             Randomizer = new Random();
         }
 

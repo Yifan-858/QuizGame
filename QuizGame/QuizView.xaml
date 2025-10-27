@@ -38,29 +38,23 @@
             <TextBlock Text="Image" />
         </Border>
 
+        
         <!--Answer 1-->
-        <Border Grid.Row="3"  Grid.Column="0" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button x:Name="AnswerButton1" Content="{Binding CurrentQuestion.Answers[0]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
-        </Border>
-
+        <Button Grid.Row="3" Grid.Column="0" x:Name="AnswerButton1" Content="{Binding CurrentQuestion.Answers[0]}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click" Tag="0"/>
+            
         <!--Answer 2-->
-        <Border Grid.Row="3" Grid.Column="1" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button x:Name="AnswerButton2" Content="{Binding CurrentQuestion.Answers[1]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
-        </Border>
-
+        <Button Grid.Row="3" Grid.Column="1" x:Name="AnswerButton2" Content="{Binding CurrentQuestion.Answers[1]}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click" Tag="1"/>
+        
         <!--Answer 3-->
-        <Border Grid.Row="4" Grid.Column="0" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button x:Name="AnswerButton3" Content="{Binding CurrentQuestion.Answers[2]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
-        </Border>
+        <Button Grid.Row="4" Grid.Column="0" x:Name="AnswerButton3" Content="{Binding CurrentQuestion.Answers[2]}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click" Tag="2"/>
 
         <!--Answer 4-->
-        <Border Grid.Row="4" Grid.Column="1" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button x:Name="AnswerButton4" Content="{Binding CurrentQuestion.Answers[3]}" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click"/>
-        </Border>
+        <Button Grid.Row="4" Grid.Column="1" x:Name="AnswerButton4" Content="{Binding CurrentQuestion.Answers[3]}" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AnswerButton_Click" Tag="3"/>
+
 
         <!--Score-->
         <Border Grid.Row="5" Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <TextBlock Text="Score" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding ScoreText}" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
 
     </Grid>
