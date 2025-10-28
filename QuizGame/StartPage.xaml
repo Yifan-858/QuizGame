@@ -24,8 +24,8 @@
         </Grid.ColumnDefinitions>
 
         <!--Logo-->
-        <Border Grid.Row="0"  Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <TextBlock Text="Logo" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border Grid.Row="0"  Margin="2">
+            <TextBlock Text="Quiz Game" FontSize="15" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c63719" />
         </Border>
 
         <!--Title-->
@@ -39,13 +39,13 @@
         </Border>
 
         <!--Category 1-->
-        <Border Grid.Row="3"  Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button Content="Snack Quiz" Click="CategoryClick" Tag="Snack Quiz"/>
+        <Border Grid.Row="3"  Grid.ColumnSpan="2" Margin="2" Padding="10" >
+            <Button Content="SNACK QUIZ" FontSize="20" FontWeight="Bold" Click="CategoryClick" Tag="Snack Quiz" Foreground="White" Background="#c63719" BorderBrush="#c63719"/>
         </Border>
 
         <!--Category 2-->
-        <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button Content="Game Quiz" Click="CategoryClick" Tag="Game Quiz"/>
+        <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2" Padding="10">
+            <Button Content="GAME QUIZ" FontSize="20" FontWeight="Bold" Click="CategoryClick" Tag="Game Quiz"  BorderBrush="LightGray" />
         </Border>
 
     </Grid>
