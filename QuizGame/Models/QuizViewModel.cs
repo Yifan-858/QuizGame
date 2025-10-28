@@ -26,7 +26,7 @@ namespace QuizGame.Models
                 {
                     precentage = (int)((double)CorrectlyAnswered / TotalAnswered * 100);
                 }
-                return $"Your score: {CorrectlyAnswered}/{TotalAnswered} Correct Rate: {precentage}%";
+                return $"Score: {CorrectlyAnswered}/{TotalAnswered} Correct Rate: {precentage}%";
             }
 
             set { }
@@ -42,6 +42,7 @@ namespace QuizGame.Models
             OnPropertyChanged("CurrentQuestion");
 
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string name = "")
         {

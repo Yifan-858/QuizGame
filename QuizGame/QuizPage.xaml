@@ -9,7 +9,7 @@
       Title="QuizPage"
       Background="White">
 
-    <Grid>
-        <local:QuizView/>
+    <Grid x:Name="QuizContainer">
+       
     </Grid>
 </Page>

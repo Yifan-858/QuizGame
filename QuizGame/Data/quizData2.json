@@ -1,0 +1,155 @@
+{
+  "Title": "Game Quiz",
+  "Questions": [
+    {
+      "Statement": "Which Japanese game involves matching colorful blocks that fall from the top of the screen?",
+      "CorrectIndex": 2,
+      "Answers": [
+        "Street Fighter",
+        "Final Fantasy",
+        "Tetris",
+        "Pac-Man"
+      ]
+    },
+    {
+      "Statement": "Which Swedish video game company created the famous game 'Minecraft'?",
+      "CorrectIndex": 0,
+      "Answers": [
+        "Mojang",
+        "EA Games",
+        "Ubisoft",
+        "Blizzard"
+      ]
+    },
+    {
+      "Statement": "Which Russian board game is similar to chess but uses different pieces called 'checkers'?",
+      "CorrectIndex": 1,
+      "Answers": [
+        "Shogi",
+        "Draughts/Checkers",
+        "Go",
+        "Backgammon"
+      ]
+    },
+    {
+      "Statement": "Which traditional Korean game uses four sticks and is played similarly to dice?",
+      "CorrectIndex": 3,
+      "Answers": [
+        "Go-Stop",
+        "Hanafuda",
+        "Mahjong",
+        "Yut Nori"
+      ]
+    },
+    {
+      "Statement": "Which classic American board game involves buying properties and collecting rent?",
+      "CorrectIndex": 0,
+      "Answers": [
+        "Monopoly",
+        "Clue",
+        "Scrabble",
+        "Risk"
+      ]
+    },
+    {
+      "Statement": "Which traditional Indian game involves moving pieces on a board based on dice rolls, aiming to reach the end first?",
+      "CorrectIndex": 2,
+      "Answers": [
+        "Carrom",
+        "Chess",
+        "Snakes and Ladders",
+        "Ludo"
+      ]
+    },
+    {
+      "Statement": "Which Japanese board game involves capturing territory on a grid with black and white stones?",
+      "CorrectIndex": 1,
+      "Answers": [
+        "Shogi",
+        "Go",
+        "Mahjong",
+        "Othello"
+      ]
+    },
+    {
+      "Statement": "Which popular South American sport is played on a table with paddles and a small ball, similar to ping pong?",
+      "CorrectIndex": 2,
+      "Answers": [
+        "Pelota",
+        "Padel",
+        "Tejo Table Game",
+        "Table Tennis"
+      ]
+    },
+    {
+      "Statement": "Which Chinese game is played with tiles and involves matching sets of numbers and symbols?",
+      "CorrectIndex": 3,
+      "Answers": [
+        "Xiangqi",
+        "Go",
+        "Pai Gow",
+        "Mahjong"
+      ]
+    },
+    {
+      "Statement": "Which board game originated in Germany and involves building settlements, roads, and cities with resource cards?",
+      "CorrectIndex": 0,
+      "Answers": [
+        "Catan",
+        "Risk",
+        "Carcassonne",
+        "Ticket to Ride"
+      ]
+    },
+    {
+      "Statement": "Which African game uses a wooden board and seeds, played by moving seeds around pits?",
+      "CorrectIndex": 1,
+      "Answers": [
+        "Senet",
+        "Mancala",
+        "Bao",
+        "Kalah"
+      ]
+    },
+    {
+      "Statement": "Which Finnish outdoor game involves throwing wooden sticks at a wooden target?",
+      "CorrectIndex": 2,
+      "Answers": [
+        "Kubb",
+        "Molky",
+        "Tikanheitto",
+        "Pesäpallo"
+      ]
+    },
+    {
+      "Statement": "Which Canadian game involves sliding stones on ice toward a target area?",
+      "CorrectIndex": 0,
+      "Answers": [
+        "Curling",
+        "Ice Hockey",
+        "Lacrosse",
+        "Bandy"
+      ]
+    },
+    {
+      "Statement": "Which Japanese chess-like game uses pawns, rooks, and a king but has unique promotion rules?",
+      "CorrectIndex": 1,
+      "Answers": [
+        "Go",
+        "Shogi",
+        "Xiangqi",
+        "Makruk"
+      ]
+    },
+    {
+      "Statement": "Which Australian game involves hopping on one foot around numbered squares drawn on the ground?",
+      "CorrectIndex": 2,
+      "Answers": [
+        "Kabaddi",
+        "Hopscotch",
+        "Noughts and Crosses",
+        "Twister"
+      ]
+    }
+  ]
+}

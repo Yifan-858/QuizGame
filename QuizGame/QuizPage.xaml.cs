@@ -12,7 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
+using QuizGame.Loader;
 
 namespace QuizGame
 {
@@ -21,9 +22,28 @@ namespace QuizGame
     /// </summary>
     public partial class QuizPage : Page
     {
-        public QuizPage()
+        public QuizPage(string category)
         {
             InitializeComponent();
+            string dataPath = " ";
+
+            switch (category)
+            {
+                case "Snack Quiz":
+                    dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "quizData1.json");
+                    break;
+                case "Game Quiz":
+                    dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "quizData2.json");
+                    break;
+                default:
+                    dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "quizData1.json");
+                    break;
+            }
+
+            Quiz quiz = QuizDataLoader.LoadJSON(dataPath);
+
+            QuizContainer.Children.Clear();
+            QuizContainer.Children.Add(new QuizView(quiz));
         }
     }
 }

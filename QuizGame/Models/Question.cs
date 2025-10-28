@@ -8,9 +8,9 @@ namespace QuizGame.Models
 {
     public class Question
     {
-        public string Statement { get; private set; }
-        public string[] Answers { get; private set; }
-        public int CorrectAnswer { get; private set; }
+        public string Statement { get; set; }
+        public string[] Answers { get; set; }
+        public int CorrectAnswer { get; set; }
         public Question(string statement, int correctAnswer, params string[] answers )
         {
             Statement = statement;

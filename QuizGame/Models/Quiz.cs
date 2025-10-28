@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace QuizGame.Models
 {
     public class Quiz
     {
-        private string _title = string.Empty;
-        public string Title => _title;
 
-        private List<Question> _questions;
-        public List<Question> Questions => _questions;
-        public Random Randomizer { get; private set; }
-        public Quiz(string title = " ")
+        public string Title { get; set; } = string.Empty;
+        public List<Question> Questions { get; set; }
+
+        [JsonIgnore]
+        public Random Randomizer { get; set; }
+        public Quiz()
         {
-            _title = title;
-            _questions = new List<Question>();
+            Questions = new List<Question>();
             Randomizer = new Random();
         }
         private int previousIndex = -1;

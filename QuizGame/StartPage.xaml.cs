@@ -25,13 +25,17 @@ namespace QuizGame
             InitializeComponent();
         }
 
-    public void CategoryClick(Object sender, RoutedEventArgs e)
-    {
-        //var quizWindow = new QuizWindow() { Owner = this };
-        //quizWindow.ShowDialog();
+        public void CategoryClick(Object sender, RoutedEventArgs e)
+        {
+            //var quizWindow = new QuizWindow() { Owner = this };
+            //quizWindow.ShowDialog();
 
-        //open a page instead
-        this.NavigationService.Navigate(new QuizPage());
-    }
+            //open a page instead
+            Button button = sender as Button;
+            string selectedCategory = button.Tag.ToString();
+
+            this.NavigationService.Navigate(new QuizPage(selectedCategory));
+
+        }
     }
 }

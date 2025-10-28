@@ -22,16 +22,11 @@ namespace QuizGame
     public partial class QuizView : UserControl
     {
         public QuizViewModel ViewModel { get; set; }
-        public QuizView()
+        public QuizView(Quiz quiz)
         {
             InitializeComponent();
 
-            Quiz nutQuiz = new Quiz("Nut Quiz");
-            nutQuiz.AddQuestion("Which nut do you like the most?", 1, "Pistashu", "Peanut", "Walnut","Almond");
-            nutQuiz.AddQuestion("Who is the best?", 2, "Picachu", "Ditto", "Kalakala","Miu2");
-            nutQuiz.AddQuestion("Where do you live?", 0, "Gothenburg", "London", "Stockholm","Malmö");
-
-            ViewModel = new QuizViewModel(nutQuiz);
+            ViewModel = new QuizViewModel(quiz);
             DataContext = ViewModel;
         }
 

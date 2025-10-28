@@ -40,12 +40,12 @@
 
         <!--Category 1-->
         <Border Grid.Row="3"  Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button Content="Category 1" Click="CategoryClick"/>
+            <Button Content="Snack Quiz" Click="CategoryClick" Tag="Snack Quiz"/>
         </Border>
 
         <!--Category 2-->
         <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2" BorderBrush="Gray" BorderThickness="2" Background="LightGray">
-            <Button Content="Category 2" Click="CategoryClick"/>
+            <Button Content="Game Quiz" Click="CategoryClick" Tag="Game Quiz"/>
         </Border>
 
     </Grid>
