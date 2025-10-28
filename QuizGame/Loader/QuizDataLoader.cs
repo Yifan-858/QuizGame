@@ -19,7 +19,10 @@ namespace QuizGame.Loader
             if(quiz != null)
             {
                 quiz.Randomizer = new Random();
-
+                foreach(Question q in quiz.Questions)
+                {
+                    q.CombineFullImagePath(q.ImagePath);
+                }
             }
 
             return quiz;
