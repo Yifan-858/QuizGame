@@ -34,8 +34,8 @@
         </Border>
 
         <!--Image-->
-        <Border Grid.Row="2" Grid.ColumnSpan="2" >
-            <TextBlock Text="Image" />
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Margin="0 0 0 20">
+            <Image Source="{Binding CurrentQuestion.ImagePath}" Width="376" Height="250" Stretch="UniformToFill"/>
         </Border>
 
         

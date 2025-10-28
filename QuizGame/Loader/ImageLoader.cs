@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizGame.Loader
 {
-    class ImageLoader
+    public static class ImageLoader
     {
     }
 }

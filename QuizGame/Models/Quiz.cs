@@ -36,9 +36,9 @@ namespace QuizGame.Models
             return Questions[i];
         }
 
-        public void AddQuestion(string statement, int correctAnswer, params string[] answers)
+        public void AddQuestion(string statement, int correctAnswer, string imagePath, params string[] answers)
         {
-            Question newQuestion = new Question(statement, correctAnswer, answers);
+            Question newQuestion = new Question(statement, correctAnswer,imagePath, answers);
             Questions.Add(newQuestion);
         }
 

@@ -3,7 +3,8 @@
   "Questions": [
     {
       "Statement": "Which Swedish snack is a small sweet bun filled with almond paste and whipped cream?",
-      "CorrectIndex": 1,
+      "CorrectAnswer": 1,
+      "ImagePath":"Image/SnackImage/SnackQuestion01.jpg",
       "Answers": [
         "Kanelbulle",
         "Semla",
@@ -13,7 +14,8 @@
     },
     {
       "Statement": "Which Indian snack is made from chickpea flour and deep-fried?",
-      "CorrectIndex": 0,
+      "CorrectAnswer": 0,
+      "ImagePath": "Image/SnackImage/SnackQuestion02.jpg",
       "Answers": [
         "Pakora",
         "Samosa",
@@ -23,7 +25,8 @@
     },
     {
       "Statement": "Which Italian snack is a thin, crispy breadstick?",
-      "CorrectIndex": 1,
+      "CorrectAnswer": 1,
+      "ImagePath": "Image/SnackImage/SnackQuestion03.jpg",
       "Answers": [
         "Focaccia",
         "Grissini",
@@ -33,7 +36,8 @@
     },
     {
       "Statement": "Which Mexican snack is made from corn and often coated in chili and lime?",
-      "CorrectIndex": 3,
+      "CorrectAnswer": 3,
+      "ImagePath": "Image/SnackImage/SnackQuestion04.jpg",
       "Answers": [
         "Taco",
         "Tamale",
@@ -43,7 +47,8 @@
     },
     {
       "Statement": "Which Belgian snack is fried twice to make it extra crispy?",
-      "CorrectIndex": 2,
+      "CorrectAnswer": 2,
+      "ImagePath": "Image/SnackImage/SnackQuestion05.jpg",
       "Answers": [
         "Croquette",
         "Waffle",
@@ -53,7 +58,8 @@
     },
     {
       "Statement": "Which Korean snack is a sweet, chewy rice cake?",
-      "CorrectIndex": 0,
+      "CorrectAnswer": 0,
+      "ImagePath": "Image/SnackImage/SnackQuestion06.jpg",
       "Answers": [
         "Tteok",
         "Kimchi",
@@ -63,7 +69,8 @@
     },
     {
       "Statement": "Which Turkish snack is a thin, nut-filled pastry?",
-      "CorrectIndex": 3,
+      "CorrectAnswer": 3,
+      "ImagePath": "Image/SnackImage/SnackQuestion07.jpg",
       "Answers": [
         "Lokum",
         "Baklava roll",
@@ -73,7 +80,8 @@
     },
     {
       "Statement": "Which American snack is a chocolate-coated peanut butter treat?",
-      "CorrectIndex": 1,
+      "CorrectAnswer": 1,
+      "ImagePath": "Image/SnackImage/SnackQuestion08.jpg",
       "Answers": [
         "Twix",
         "Reese’s",
@@ -83,7 +91,8 @@
     },
     {
       "Statement": "Which French snack is a flaky, buttery pastry often eaten for breakfast?",
-      "CorrectIndex": 0,
+      "CorrectAnswer": 0,
+      "ImagePath": "Image/SnackImage/SnackQuestion09.jpg",
       "Answers": [
         "Croissant",
         "Baguette",
@@ -92,63 +101,14 @@
       ]
     },
     {
-      "Statement": "Which Dutch snack is a deep-fried meat-filled snack usually served with mustard?",
-      "CorrectIndex": 2,
-      "Answers": [
-        "Bitterballen",
-        "Poffertjes",
-        "Kroket",
-        "Stroopwafel"
-      ]
-    },
-    {
       "Statement": "Which Chinese snack is a thin, crispy wonton-like pastry?",
-      "CorrectIndex": 1,
+      "CorrectAnswer": 1,
+      "ImagePath": "Image/SnackImage/SnackQuestion10.jpg",
       "Answers": [
         "Baozi",
         "Spring Roll",
         "Jiaozi",
         "Tangyuan"
-      ]
-    },
-    {
-      "Statement": "Which Brazilian snack is a small, fried cheese ball?",
-      "CorrectIndex": 3,
-      "Answers": [
-        "Brigadeiro",
-        "Pão de Queijo sticks",
-        "Coxinha",
-        "Pão de Queijo"
-      ]
-    },
-    {
-      "Statement": "Which Spanish snack is small pieces of fried dough often dusted with sugar?",
-      "CorrectIndex": 0,
-      "Answers": [
-        "Churros",
-        "Tortilla",
-        "Patatas Bravas",
-        "Jamón"
-      ]
-    },
-    {
-      "Statement": "Which Nigerian snack is deep-fried dough often shaped like sticks or strips?",
-      "CorrectIndex": 2,
-      "Answers": [
-        "Suya",
-        "Moi Moi",
-        "Chin Chin",
-        "Akara"
-      ]
-    },
-    {
-      "Statement": "Which British snack is a baked pastry filled with meat and gravy?",
-      "CorrectIndex": 1,
-      "Answers": [
-        "Yorkshire Pudding",
-        "Cornish Pasty",
-        "Scotch Egg",
-        "Toffee"
       ]
     }
   ]

@@ -3,7 +3,8 @@
   "Questions": [
     {
       "Statement": "Which Japanese game involves matching colorful blocks that fall from the top of the screen?",
-      "CorrectIndex": 2,
+      "CorrectAnswer": 2,
+      "ImagePath": "Image/GameImage/GameQuestion01.jpg",
       "Answers": [
         "Street Fighter",
         "Final Fantasy",
@@ -13,7 +14,8 @@
     },
     {
       "Statement": "Which Swedish video game company created the famous game 'Minecraft'?",
-      "CorrectIndex": 0,
+      "CorrectAnswer": 0,
+      "ImagePath": "Image/GameImage/GameQuestion02.jpg",
       "Answers": [
         "Mojang",
         "EA Games",
@@ -23,7 +25,8 @@
     },
     {
       "Statement": "Which Russian board game is similar to chess but uses different pieces called 'checkers'?",
-      "CorrectIndex": 1,
+      "CorrectAnswer": 1,
+      "ImagePath": "Image/GameImage/GameQuestion03.jpg",
       "Answers": [
         "Shogi",
         "Draughts/Checkers",
@@ -33,7 +36,8 @@
     },
     {
       "Statement": "Which traditional Korean game uses four sticks and is played similarly to dice?",
-      "CorrectIndex": 3,
+      "CorrectAnswer": 3,
+      "ImagePath": "Image/GameImage/GameQuestion04.jpg",
       "Answers": [
         "Go-Stop",
         "Hanafuda",
@@ -43,7 +47,8 @@
     },
     {
       "Statement": "Which classic American board game involves buying properties and collecting rent?",
-      "CorrectIndex": 0,
+      "CorrectAnswer": 0,
+      "ImagePath": "Image/GameImage/GameQuestion05.jpg",
       "Answers": [
         "Monopoly",
         "Clue",
@@ -53,7 +58,8 @@
     },
     {
       "Statement": "Which traditional Indian game involves moving pieces on a board based on dice rolls, aiming to reach the end first?",
-      "CorrectIndex": 2,
+      "CorrectAnswer": 2,
+      "ImagePath": "Image/GameImage/GameQuestion06.jpg",
       "Answers": [
         "Carrom",
         "Chess",
@@ -62,28 +68,9 @@
       ]
     },
     {
-      "Statement": "Which Japanese board game involves capturing territory on a grid with black and white stones?",
-      "CorrectIndex": 1,
-      "Answers": [
-        "Shogi",
-        "Go",
-        "Mahjong",
-        "Othello"
-      ]
-    },
-    {
-      "Statement": "Which popular South American sport is played on a table with paddles and a small ball, similar to ping pong?",
-      "CorrectIndex": 2,
-      "Answers": [
-        "Pelota",
-        "Padel",
-        "Tejo Table Game",
-        "Table Tennis"
-      ]
-    },
-    {
       "Statement": "Which Chinese game is played with tiles and involves matching sets of numbers and symbols?",
-      "CorrectIndex": 3,
+      "CorrectAnswer": 3,
+      "ImagePath": "Image/GameImage/GameQuestion07.jpg",
       "Answers": [
         "Xiangqi",
         "Go",
@@ -93,7 +80,8 @@
     },
     {
       "Statement": "Which board game originated in Germany and involves building settlements, roads, and cities with resource cards?",
-      "CorrectIndex": 0,
+      "CorrectAnswer": 0,
+      "ImagePath": "Image/GameImage/GameQuestion08.jpg",
       "Answers": [
         "Catan",
         "Risk",
@@ -103,7 +91,8 @@
     },
     {
       "Statement": "Which African game uses a wooden board and seeds, played by moving seeds around pits?",
-      "CorrectIndex": 1,
+      "CorrectAnswer": 1,
+      "ImagePath": "Image/GameImage/GameQuestion09.jpg",
       "Answers": [
         "Senet",
         "Mancala",
@@ -113,42 +102,13 @@
     },
     {
       "Statement": "Which Finnish outdoor game involves throwing wooden sticks at a wooden target?",
-      "CorrectIndex": 2,
+      "CorrectAnswer": 2,
+      "ImagePath": "Image/GameImage/GameQuestion10.jpg",
       "Answers": [
         "Kubb",
         "Molky",
         "Tikanheitto",
         "Pesäpallo"
-      ]
-    },
-    {
-      "Statement": "Which Canadian game involves sliding stones on ice toward a target area?",
-      "CorrectIndex": 0,
-      "Answers": [
-        "Curling",
-        "Ice Hockey",
-        "Lacrosse",
-        "Bandy"
-      ]
-    },
-    {
-      "Statement": "Which Japanese chess-like game uses pawns, rooks, and a king but has unique promotion rules?",
-      "CorrectIndex": 1,
-      "Answers": [
-        "Go",
-        "Shogi",
-        "Xiangqi",
-        "Makruk"
-      ]
-    },
-    {
-      "Statement": "Which Australian game involves hopping on one foot around numbered squares drawn on the ground?",
-      "CorrectIndex": 2,
-      "Answers": [
-        "Kabaddi",
-        "Hopscotch",
-        "Noughts and Crosses",
-        "Twister"
       ]
     }
   ]

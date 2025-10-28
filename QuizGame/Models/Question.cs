@@ -9,13 +9,16 @@ namespace QuizGame.Models
     public class Question
     {
         public string Statement { get; set; }
-        public string[] Answers { get; set; }
         public int CorrectAnswer { get; set; }
-        public Question(string statement, int correctAnswer, params string[] answers )
+        public string ImagePath { get; set; }
+        public string[] Answers { get; set; }
+        
+        public Question(string statement, int correctAnswer, string imagePath, params string[] answers )
         {
             Statement = statement;
-            Answers = answers;
             CorrectAnswer = correctAnswer;
+            ImagePath = imagePath;
+            Answers = answers;
         }
     }
 }
