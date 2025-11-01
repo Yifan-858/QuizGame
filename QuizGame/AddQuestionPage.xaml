@@ -1,0 +1,97 @@
+﻿<Page x:Class="QuizGame.AddQuestionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuizGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="400"
+      Title="AddQuestionPage"
+      Background="White">
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Title-->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Margin="2 8 2 2" >
+            <TextBlock Text="Add a new question" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+        </Border>
+
+        <!--Choose a quiz category-->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
+            <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <ComboBox x:Name="ExistQuizComboBox" FontSize="10" Margin="20 4 20 20" SelectedIndex="0">
+                <ComboBoxItem>Snack Quiz</ComboBoxItem>
+                <ComboBoxItem>World Game Quiz</ComboBoxItem>
+                <ComboBoxItem>Customized Quiz</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <!--Add a new question-->
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <Border BorderBrush="Gray" BorderThickness="0,1,0,0" />
+            <TextBlock Text="Enter a question" TextWrapping="Wrap" Margin="20 4 20 0" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Example: Which one is the capital city of Sweden?" TextWrapping="Wrap" Margin="20 4" FontSize="12"  Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBox x:Name="AddNewQuestionTextBox" Height="30" Margin="20 0 20 10"/>
+        </StackPanel>
+
+        <!--Add answers title-->
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+            <Border BorderBrush="Gray" BorderThickness="0,1,0,0" />
+            <TextBlock Text="Add four answers" TextWrapping="Wrap" Margin="20 4 20 0" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Example: Gothenburg, Malmö, Stockholm, Lund" TextWrapping="Wrap" Margin="20 4" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!--Answers 1 & 3 textbox-->
+        <StackPanel Grid.Row="4" Grid.Column="0" Margin="20 4 0 10">
+            <TextBlock Text="Answer 1" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBox x:Name="Answer1TextBox" Height="30" Width="150" Margin="0 0 0 4" />
+            <TextBlock Text="Answer 3" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBox x:Name="Answer3TextBox" Height="30" Width="150"/>
+        </StackPanel>
+
+        <!--Answers 2 & 4 textbox-->
+        <StackPanel Grid.Row="4" Grid.Column="1" Margin="20 4">
+            <TextBlock Text="Answer 2" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBox x:Name="Answer2TextBox" Height="30" Width="150" Margin="0 0 0 4"/>
+            <TextBlock Text="Answer 4" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBox x:Name="Answer4TextBox" Height="30" Width="150"/>
+        </StackPanel>
+
+        <!--Correct textbox-->
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Margin="20 10">
+            <Border BorderBrush="Gray" BorderThickness="0,1,0,0" />
+            <TextBlock Text="Enter the correct answer index" TextWrapping="Wrap" Margin="0 4 0 4"  FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Only enter a number, example: 1" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBox x:Name="CorrectIndexTextBox" Height="30" Width="150" Margin="0 10"/>
+        </StackPanel>
+
+        <!--Add Button-->
+        <Button Grid.Row="6" Grid.ColumnSpan="2" x:Name="AddNewQuestionButton" Content="Add"  Margin="20 0" FontSize="20"  FontWeight="Medium" Foreground="White" Background="#c63719" BorderBrush="#c63719" Click="CreateNewQuiz_Click"/>
+        
+        <!--Add question feedback-->
+        <TextBlock Grid.Row="7"  Grid.ColumnSpan="2" Text=" " TextWrapping="Wrap" Margin="20 10" FontSize="18" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+
+        <!--Clear Button-->
+        <Button Grid.Row="8" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="CreateNewQuiz_Click"/>
+
+        <!--Return Button-->
+        <Button Grid.Row="8" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="CreateNewQuiz_Click"/>
+
+    </Grid>
+</Page>

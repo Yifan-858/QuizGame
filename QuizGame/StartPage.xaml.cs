@@ -25,7 +25,7 @@ namespace QuizGame
             InitializeComponent();
         }
 
-        public void CategoryClick(Object sender, RoutedEventArgs e)
+        public void Category_Click(Object sender, RoutedEventArgs e)
         {
             //var quizWindow = new QuizWindow() { Owner = this };
             //quizWindow.ShowDialog();
@@ -36,6 +36,11 @@ namespace QuizGame
 
             this.NavigationService.Navigate(new QuizPage(selectedCategory));
 
+        }
+
+        public void EnterEditor_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new QuizEditorPage());
         }
     }
 }
