@@ -12,9 +12,12 @@
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -29,23 +32,38 @@
         </Border>
 
         <!--Title-->
-        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="2" >
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="2 8 2 2" >
             <TextBlock Text="CHOOSE A CATEGORY LET'S START THE QUIZ GAME" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </Border>
 
-        <!--Empty-->
-        <Border Grid.Row="2" Grid.ColumnSpan="2" >
-            <TextBlock  />
+        <!--Default quiz subtitle-->
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Margin="2 20 2 2" >
+            <TextBlock Text="Default Quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" HorizontalAlignment="center"  VerticalAlignment="Center"/>
         </Border>
 
-        <!--Category 1-->
-        <Border Grid.Row="3"  Grid.ColumnSpan="2" Margin="2" Padding="10" >
+        <!--Default Quiz 1-->
+        <Border Grid.Row="3"  Grid.ColumnSpan="2"  Margin="2" Padding="10">
             <Button Content="SNACK QUIZ" FontSize="20" FontWeight="Bold" Click="CategoryClick" Tag="Snack Quiz" Foreground="White" Background="#c63719" BorderBrush="#c63719"/>
         </Border>
 
-        <!--Category 2-->
-        <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2" Padding="10">
-            <Button Content="GAME QUIZ" FontSize="20" FontWeight="Bold" Click="CategoryClick" Tag="Game Quiz"  BorderBrush="LightGray" />
+        <!--Default Quiz 2-->
+        <Border Grid.Row="4"  Grid.ColumnSpan="2" Margin="2" Padding="10" >
+            <Button Content="WORLD GAME QUIZ" FontSize="20" FontWeight="Bold" Click="CategoryClick" Tag="Game Quiz" Foreground="White" Background="#c63719" BorderBrush="#c63719"/>
+        </Border>
+
+        <!--Customized Quiz subtitle-->
+        <Border Grid.Row="5" Grid.ColumnSpan="2" Margin="2 20 2 2" >
+            <TextBlock Text="Your Customized Quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" HorizontalAlignment="center"  VerticalAlignment="Center"/>
+        </Border>
+
+        <!--Customized Quiz-->
+        <Border Grid.Row="6"  Grid.ColumnSpan="2" Margin="2" Padding="10" >
+            <Button Content="Customized Quiz" FontSize="20" FontWeight="Bold" Click="CategoryClick" Tag="Game Quiz" Foreground="White" Background="#c63719" BorderBrush="#c63719"/>
+        </Border>
+
+        <!--Quiz Editor-->
+        <Border Grid.Row="7" Grid.ColumnSpan="2" Margin="2" Padding="10">
+            <Button Content="QUIZ EDITOR" FontSize="20" FontWeight="Bold" Click="CategoryClick" Tag="Game Quiz"  BorderBrush="LightGray" />
         </Border>
 
     </Grid>
