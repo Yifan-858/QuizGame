@@ -27,12 +27,22 @@ namespace QuizGame
 
         public void CreateNewQuiz_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
-        public void EditQuiz_Click(object sender, RoutedEventArgs e)
+        public void AddQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddQuestionPage());
+        }
+
+        public void EditExisitQuiz_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new EditExistQuizPage());
+        }
+
+        public void Return_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new StartPage());
         }
     }
 }

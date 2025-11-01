@@ -17,9 +17,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -34,8 +34,8 @@
 
         <!--Choose a quiz category-->
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
-            <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <ComboBox x:Name="ExistQuizComboBox" FontSize="10" Margin="20 4 20 20" SelectedIndex="0">
+            <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <ComboBox x:Name="ExistQuizComboBox" FontSize="10" Margin="20 4 20 20" SelectedIndex="-1">
                 <ComboBoxItem>Snack Quiz</ComboBoxItem>
                 <ComboBoxItem>World Game Quiz</ComboBoxItem>
                 <ComboBoxItem>Customized Quiz</ComboBoxItem>
@@ -45,7 +45,7 @@
         <!--Add a new question-->
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
             <Border BorderBrush="Gray" BorderThickness="0,1,0,0" />
-            <TextBlock Text="Enter a question" TextWrapping="Wrap" Margin="20 4 20 0" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Enter a question" TextWrapping="Wrap" Margin="20 4 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
             <TextBlock Text="Example: Which one is the capital city of Sweden?" TextWrapping="Wrap" Margin="20 4" FontSize="12"  Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
             <TextBox x:Name="AddNewQuestionTextBox" Height="30" Margin="20 0 20 10"/>
         </StackPanel>
@@ -53,7 +53,7 @@
         <!--Add answers title-->
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
             <Border BorderBrush="Gray" BorderThickness="0,1,0,0" />
-            <TextBlock Text="Add four answers" TextWrapping="Wrap" Margin="20 4 20 0" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Add four answers" TextWrapping="Wrap" Margin="20 4 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
             <TextBlock Text="Example: Gothenburg, Malmö, Stockholm, Lund" TextWrapping="Wrap" Margin="20 4" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </StackPanel>
 
@@ -74,11 +74,13 @@
         </StackPanel>
 
         <!--Correct textbox-->
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Margin="20 10">
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Margin="20 10" >
             <Border BorderBrush="Gray" BorderThickness="0,1,0,0" />
-            <TextBlock Text="Enter the correct answer index" TextWrapping="Wrap" Margin="0 4 0 4"  FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <TextBlock Text="Only enter a number, example: 1" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <TextBox x:Name="CorrectIndexTextBox" Height="30" Width="150" Margin="0 10"/>
+            <TextBlock Text="Enter the correct answer index" TextWrapping="Wrap" Margin="0 4 0 4"  FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <RadioButton x:Name="CorrectIndexButton1" Content="Answer 1" Tag="0" GroupName="CorrectIndex" HorizontalAlignment="Center"/>
+            <RadioButton x:Name="CorrectIndexButton2" Content="Answer 2" Tag="1" GroupName="CorrectIndex" HorizontalAlignment="Center"/>
+            <RadioButton x:Name="CorrectIndexButton3" Content="Answer 3" Tag="2" GroupName="CorrectIndex" HorizontalAlignment="Center"/>
+            <RadioButton x:Name="CorrectIndexButton4" Content="Answer 4" Tag="3" GroupName="CorrectIndex" HorizontalAlignment="Center"/>
         </StackPanel>
 
         <!--Add Button-->
@@ -88,10 +90,10 @@
         <TextBlock Grid.Row="7"  Grid.ColumnSpan="2" Text=" " TextWrapping="Wrap" Margin="20 10" FontSize="18" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
 
         <!--Clear Button-->
-        <Button Grid.Row="8" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="CreateNewQuiz_Click"/>
+        <Button Grid.Row="8" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click"/>
 
         <!--Return Button-->
-        <Button Grid.Row="8" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="CreateNewQuiz_Click"/>
+        <Button Grid.Row="8" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
 
     </Grid>
 </Page>
