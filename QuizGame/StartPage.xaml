@@ -68,9 +68,11 @@
         </Border>
 
         <!--Customized Quiz-->
-        <Border Grid.Row="7"  Grid.ColumnSpan="2" Margin="0 5"  >
-            <Button Content="Customized Quiz" FontSize="20" FontWeight="Bold" Click="Category_Click" Tag="Game Quiz" Foreground="White" Background="#6f86d6" BorderBrush="#6f86d6"/>
-        </Border>
+        <ScrollViewer  Grid.Row="7"  Grid.ColumnSpan="2" Margin="0 5"  >
+            <StackPanel x:Name="CustomizedQuizContainer"  >
+               
+            </StackPanel>
+        </ScrollViewer>
 
         <!--Mix Quiz subtitle-->
         <Border Grid.Row="8" Grid.ColumnSpan="2" Margin="2 20 2 2" >

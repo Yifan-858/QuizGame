@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using QuizGame.Loader;
+using QuizGame.Models;
 
 namespace QuizGame
 {
@@ -23,24 +24,59 @@ namespace QuizGame
         public StartPage()
         {
             InitializeComponent();
+            LoadCustomizedQuiz();
         }
 
         public void Category_Click(Object sender, RoutedEventArgs e)
         {
-            //var quizWindow = new QuizWindow() { Owner = this };
-            //quizWindow.ShowDialog();
-
-            //open a page instead
             Button button = sender as Button;
             string selectedCategory = button.Tag.ToString();
 
             this.NavigationService.Navigate(new QuizPage(selectedCategory));
-
         }
 
-        public void EnterEditor_Click(object sender, RoutedEventArgs e)
+        public void EnterEditor_Click(Object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new QuizEditorPage());
+        }
+
+        public void LoadCustomizedQuiz()
+        {
+            string statusMessage = "empty";
+            List<Quiz>? quizzes = QuizDataLoader.FindLocalQuizzes(out statusMessage);
+
+            CustomizedQuizContainer.Children.Clear();
+
+            if(quizzes.Count == 0)
+            {
+                CustomizedQuizContainer.Children.Add(new TextBlock
+                {
+                    Text = statusMessage,
+                    FontSize = 18,
+                });
+
+                return;
+            }
+
+            foreach(Quiz q in quizzes)
+            {
+                Button button = new Button
+                {
+                    Content = q.Title,
+                    FontSize=20,
+                    Margin= new Thickness(0,5,0,5),
+                    FontWeight= FontWeights.Bold,
+                    Foreground=Brushes.White,
+                    Background=(Brush)new BrushConverter().ConvertFrom("#6f86d6"), 
+                    BorderBrush=(Brush)new BrushConverter().ConvertFrom("#6f86d6"),
+                    Tag = q  //store the whole quiz object in the tag
+                };
+
+                button.Click += Category_Click;
+
+                CustomizedQuizContainer.Children.Add(button);
+            }
+
         }
     }
 }

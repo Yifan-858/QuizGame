@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
+using QuizGame.Models;
+using System.Text.Json;
 
 namespace QuizGame
 {
@@ -20,14 +22,61 @@ namespace QuizGame
     /// </summary>
     public partial class QuizEditorPage : Page
     {
+        public string findLocalFolder;
+        public string dataFolder;
+        public string dataFilePath;
+
         public QuizEditorPage()
         {
             InitializeComponent();
+            findLocalFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            dataFolder = Path.Combine(findLocalFolder, "QuizData");
+
+            if (!Directory.Exists(dataFolder))
+            {
+                Directory.CreateDirectory(dataFolder);
+            }
+ 
         }
 
         public void CreateNewQuiz_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string quizCategory = NewQuizCategory.Text.Trim();
 
+                if (string.IsNullOrWhiteSpace(quizCategory))
+                {
+                    CreateStatusTextBlock.Text = "Please enter a quie category.";
+                    CreateStatusTextBlock.Foreground = Brushes.Red;
+                }
+
+                Quiz newQuiz = new Quiz
+                {
+                    Title = quizCategory,
+                };
+
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+
+                string jsonString = JsonSerializer.Serialize(newQuiz, options);
+
+                string fileName = string.Join("_", quizCategory.Split(Path.GetInvalidFileNameChars()));
+                dataFilePath = Path.Combine(dataFolder, $"{fileName}.json");
+
+                File.WriteAllText(dataFilePath, jsonString);
+
+                CreateStatusTextBlock.Text = $"Saved to {dataFilePath}";
+                CreateStatusTextBlock.Foreground = Brushes.Green;
+            }
+            catch (Exception ex)
+            {
+                 CreateStatusTextBlock.Text = $"Something went wrong, {ex}";
+                 CreateStatusTextBlock.Foreground = Brushes.Red;
+            }
+            
         }
 
         public void AddQuestion_Click(object sender, RoutedEventArgs e)

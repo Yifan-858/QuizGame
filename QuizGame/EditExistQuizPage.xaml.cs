@@ -24,5 +24,23 @@ namespace QuizGame
         {
             InitializeComponent();
         }
+
+        public void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void Clear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void Return_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new QuizEditorPage());
+        }
     }
 }

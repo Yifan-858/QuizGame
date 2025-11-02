@@ -13,16 +13,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -31,12 +28,29 @@
             <TextBlock Text="Edit Existing Quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </Border>
 
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <TextBlock Text="Edit a quesion" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <ComboBox x:Name="ExistQuestionComboBox" FontSize="12" Margin="20 4" SelectedIndex="0">
-                <ComboBoxItem>QUESTION1</ComboBoxItem>
-                <ComboBoxItem>QUESTION2</ComboBoxItem>
+        <!--Choose a quiz category-->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
+            <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <ComboBox x:Name="ExistQuizComboBox" FontSize="10" Margin="20 4 20 20" SelectedIndex="-1">
+                <ComboBoxItem>Snack Quiz</ComboBoxItem>
+                <ComboBoxItem>World Game Quiz</ComboBoxItem>
+                <ComboBoxItem>Customized Quiz</ComboBoxItem>
             </ComboBox>
+            <Button x:Name="LoadButton" Content="Load Quiz" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 0 15 0" Click="LoadButton_Click"/>
         </StackPanel>
+
+        <!--Edit Questions in the JSON-->
+        <GroupBox Grid.Row="2"  Grid.ColumnSpan="2" Header="Quiz Overview" FontSize="18" FontWeight="Bold" Margin="15 15 15 0">
+            <ScrollViewer>
+                <TextBox x:Name="JSONOutputTextBox" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Background="White" Padding="5"/>
+            </ScrollViewer>
+        </GroupBox>
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2"  x:Name="SaveButton" Content="Save Quiz" Width="150" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 15" Click="SaveButton_Click"/>
+
+        <Button Grid.Row="4" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click"/>
+        
+        <Button Grid.Row="4" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
+       
     </Grid>
 </Page>
