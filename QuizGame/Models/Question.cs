@@ -14,18 +14,31 @@ namespace QuizGame.Models
         public string ImagePath { get; set; }
         public string[] Answers { get; set; }
         public string FullImagePath { get; private set; }
+       
         
-        public Question(string statement, int correctAnswer, string imagePath, params string[] answers )
+        public Question(string statement, int correctAnswer, string imagePath = "Image/quizDefault.jpg", params string[] answers )
         {
             Statement = statement;
             CorrectAnswer = correctAnswer;
             ImagePath = imagePath;
             Answers = answers;
+
+            CombineFullImagePath(imagePath);
         }
 
         public void CombineFullImagePath(string imagePath)
         {
-            FullImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imagePath);
+            if (Path.IsPathRooted(imagePath)) 
+            {
+                //user image, save the absolute path
+                FullImagePath = imagePath;
+            }
+            else
+            {
+                //built-in img, complete the in-app path
+                FullImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imagePath);
+            }
         }
+
     }
 }

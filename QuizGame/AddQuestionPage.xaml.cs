@@ -1,7 +1,11 @@
-﻿using System;
+﻿using QuizGame.Loader;
+using QuizGame.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,29 +24,96 @@ namespace QuizGame
     /// </summary>
     public partial class AddQuestionPage : Page
     {
+
+        public string pictureAbsolutePath;
         public AddQuestionPage()
         {
             InitializeComponent();
+            LoadAllCustomizedQuiz();
         }
 
-        public void CreateNewQuiz_Click(object sender, RoutedEventArgs e)
+        public void LoadAllCustomizedQuiz()
         {
+            string statusMessage;
+            List<Quiz>? quizzes = QuizDataLoader.FindLocalQuizzes(out statusMessage);
 
+            if (quizzes.Count > 0)
+            {
+                foreach(Quiz q in quizzes)
+                {
+                    ExistQuizComboBox.Items.Add(q.Title);
+                }
+            }
+        }
+
+        public void Picture_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;)|*.png;*.jpg;*.jpeg;";
+
+            if (dialog.ShowDialog() == true)
+            {
+                pictureAbsolutePath = dialog.FileName.Replace("\\", "/");; 
+                PictureFeedback.Text = $"Add {pictureAbsolutePath}"; 
+            }
+        }
+
+        public void SubmitNewQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //find the save path from the ComboBox index
+                int dataFileIndex = ExistQuizComboBox.SelectedIndex;
+
+                if(dataFileIndex <= -1)
+                {
+                    SubmitFeedbckTextBlock.Text = "Invalid quiz. Please select a category.";
+                    return;
+                }
+
+                string[]? jsonFilePaths = QuizDataLoader.GetLocalJsonFiles();
+
+                if(jsonFilePaths == null || jsonFilePaths.Length == 0 || dataFileIndex >= jsonFilePaths.Length)
+                {
+                    SubmitFeedbckTextBlock.Text = "Quiz File not found";
+                    return;
+                }
+
+                string selectedQuizFilePath = jsonFilePaths[dataFileIndex];
+
+                //load the selectQuiz
+                string jsonString = File.ReadAllText(selectedQuizFilePath);
+                Quiz selectedQuiz = JsonSerializer.Deserialize<Quiz>(jsonString)?? throw new Exception("Failed to load quiz from JSON.");;
+
+                string[] answers = { Answer1TextBox.Text, Answer2TextBox.Text, Answer3TextBox.Text, Answer4TextBox.Text };
+
+                //add in the new question
+                selectedQuiz.AddQuestion(NewQuestionStatementTextBox.Text,CorrectIndexComboBox.SelectedIndex, pictureAbsolutePath,answers);
+
+                //submit the form
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+                string updatedQuizJSON = JsonSerializer.Serialize(selectedQuiz, options);
+                File.WriteAllText(selectedQuizFilePath, updatedQuizJSON);
+                SubmitFeedbckTextBlock.Text = $"Saved to {selectedQuiz}";
+                SubmitFeedbckTextBlock.Foreground = Brushes.Green;
+            }
+            catch (Exception ex)
+            {
+                SubmitFeedbckTextBlock.Text = $"Something went wrong. {ex.Message}";
+            }
         }
 
         public void Clear_Click(object sender, RoutedEventArgs e)
         {
-            ExistQuizComboBox.SelectedIndex = -1;
-            AddNewQuestionTextBox.Clear();
+            NewQuestionStatementTextBox.Clear();
             Answer1TextBox.Clear();
             Answer2TextBox.Clear();
             Answer3TextBox.Clear();
             Answer4TextBox.Clear();
-
-            CorrectIndexButton1.IsChecked = false;
-            CorrectIndexButton2.IsChecked = false;
-            CorrectIndexButton3.IsChecked = false;
-            CorrectIndexButton4.IsChecked = false;
+            CorrectIndexComboBox.SelectedIndex = -1;
         }
 
         public void Return_Click(object sender, RoutedEventArgs e)

@@ -13,6 +13,8 @@ namespace QuizGame.Loader
     {
         public static string findLocalFolder;
         public static string dataFolder;
+
+        //Load Build-in quiz, used in QuizPage
         public static Quiz LoadJSON(string dataPath)
         {
             string json = File.ReadAllText(dataPath);
@@ -30,11 +32,8 @@ namespace QuizGame.Loader
             return quiz;
         }
 
-
-        public static List<Quiz> FindLocalQuizzes(out string statusMessage)
+        public static string[]? GetLocalJsonFiles()
         {
-            var quizzes = new List<Quiz>();
-
             findLocalFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             dataFolder = Path.Combine(findLocalFolder, "QuizData");
 
@@ -42,14 +41,20 @@ namespace QuizGame.Loader
             if (!Directory.Exists(dataFolder))
             {
                 Directory.CreateDirectory(dataFolder);
-                statusMessage = "There is no quiz yet. Create one in Quiz Editor.";
-                return quizzes;
             }
 
-            var jsonFileNames = Directory.GetFiles(dataFolder, "*.json");
+            var jsonFilePaths = Directory.GetFiles(dataFolder, "*.json");
+            return jsonFilePaths;
+        }
+
+        public static List<Quiz> FindLocalQuizzes(out string statusMessage)
+        {
+            var quizzes = new List<Quiz>();
+
+            var jsonFileNames = GetLocalJsonFiles();
 
             //Check if there is any json file in the folder
-            if(jsonFileNames.Length == 0)
+            if(jsonFileNames == null || jsonFileNames.Length == 0)
             {
                 statusMessage = "There is no quiz yet. Create one in Quiz Editor.";
                 return quizzes;
@@ -70,7 +75,7 @@ namespace QuizGame.Loader
                 }
                 catch (Exception ex)
                 {
-                    statusMessage = "Something went wrong with loading JSON. Please try again.";
+                    statusMessage = $"Something went wrong with loading JSON. {ex}";
                 }
             }
 

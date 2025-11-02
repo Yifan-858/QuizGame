@@ -22,7 +22,8 @@ namespace QuizGame
     /// </summary>
     public partial class QuizPage : Page
     {
-        public QuizPage(string category)
+        //Constructor 1 for build-in category
+        public QuizPage(string category = "Snack Quiz")
         {
             InitializeComponent();
             string dataPath = " ";
@@ -42,6 +43,18 @@ namespace QuizGame
 
             Quiz quiz = QuizDataLoader.LoadJSON(dataPath);
 
+            LoadQuizView(quiz);
+        }
+
+        //Constructor 2 for customized category
+        public QuizPage(Quiz quiz)
+        {
+            InitializeComponent();
+            LoadQuizView(quiz);
+        }
+
+        public void LoadQuizView(Quiz quiz)
+        {
             QuizContainer.Children.Clear();
             QuizContainer.Children.Add(new QuizView(quiz));
         }

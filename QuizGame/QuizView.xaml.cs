@@ -30,8 +30,6 @@ namespace QuizGame
             DataContext = ViewModel;
         }
 
-        
-
         private async void AnswerButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;

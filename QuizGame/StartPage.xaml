@@ -18,7 +18,8 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -70,17 +71,21 @@
         <!--Customized Quiz-->
         <ScrollViewer  Grid.Row="7"  Grid.ColumnSpan="2" Margin="0 5"  >
             <StackPanel x:Name="CustomizedQuizContainer"  >
-               
             </StackPanel>
         </ScrollViewer>
 
+        <!--Feedback-->
+        <Border   Grid.Row="8" Grid.ColumnSpan="2" Margin="2 20 2 2" >
+            <TextBlock x:Name="CustomizedQuizFeedbackTextBlock" Text="" TextWrapping="Wrap" FontWeight="Bold" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+        </Border>
+
         <!--Mix Quiz subtitle-->
-        <Border Grid.Row="8" Grid.ColumnSpan="2" Margin="2 20 2 2" >
+        <Border Grid.Row="9" Grid.ColumnSpan="2" Margin="2 20 2 2" >
             <TextBlock Text="Mix Chosen Cateory" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </Border>
 
         <!--Mix Quiz-->
-        <Border Grid.Row="9"  Grid.ColumnSpan="2" Margin="0 5"  >
+        <Border Grid.Row="10"  Grid.ColumnSpan="2" Margin="0 5"  >
             <Button Content="Shuffle the Quiz" FontSize="20" FontWeight="Bold" Click="Category_Click" Tag="Game Quiz" Foreground="White">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

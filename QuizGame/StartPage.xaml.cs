@@ -42,7 +42,7 @@ namespace QuizGame
 
         public void LoadCustomizedQuiz()
         {
-            string statusMessage = "empty";
+            string statusMessage;
             List<Quiz>? quizzes = QuizDataLoader.FindLocalQuizzes(out statusMessage);
 
             CustomizedQuizContainer.Children.Clear();
@@ -52,7 +52,7 @@ namespace QuizGame
                 CustomizedQuizContainer.Children.Add(new TextBlock
                 {
                     Text = statusMessage,
-                    FontSize = 18,
+                    FontSize = 12,
                 });
 
                 return;
@@ -72,11 +72,26 @@ namespace QuizGame
                     Tag = q  //store the whole quiz object in the tag
                 };
 
-                button.Click += Category_Click;
+                button.Click += LocalQuizCategory_Click;
 
                 CustomizedQuizContainer.Children.Add(button);
             }
+        }
 
+        public void LocalQuizCategory_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Quiz quiz = button.Tag as Quiz;
+
+            if (quiz.Questions.Count > 0)
+            {
+                this.NavigationService.Navigate(new QuizPage(quiz));
+            }
+            else
+            {
+                CustomizedQuizFeedbackTextBlock.Text = "No question in the quiz yet. Add more in Quiz Editor.";
+            }
+            
         }
     }
 }
