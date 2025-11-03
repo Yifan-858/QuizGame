@@ -12,9 +12,6 @@ namespace QuizGame.Loader
 {
     public static class QuizDataLoader
     {
-        public static string findLocalFolder;
-        public static string dataFolder;
-
         //Load Build-in quiz, used in QuizPage
         public static Quiz LoadJSON(string dataPath)
         {
@@ -33,17 +30,24 @@ namespace QuizGame.Loader
             return quiz;
         }
 
-        //Get all the Json file paths
-        public static string[]? GetLocalJsonFiles()
+        //Get C:/Users/"username"/AppData/Local/QuizData
+        public static string GetLocalDataFolder()
         {
-            findLocalFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            dataFolder = Path.Combine(findLocalFolder, "QuizData");
+            string findLocalFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string dataFolder = Path.Combine(findLocalFolder, "QuizData");
 
-            //Create a new QuizData folder if not find
             if (!Directory.Exists(dataFolder))
             {
                 Directory.CreateDirectory(dataFolder);
             }
+
+            return dataFolder;
+        }
+
+        //Get all the Json file paths
+        public static string[]? GetLocalJsonFiles()
+        {
+            string dataFolder = GetLocalDataFolder();
 
             var jsonFilePaths = Directory.GetFiles(dataFolder, "*.json");
             return jsonFilePaths;
@@ -101,6 +105,6 @@ namespace QuizGame.Loader
                     comboBox.Items.Add(q.Title);
                 }
             }
-        }
+        }    
     }
 }

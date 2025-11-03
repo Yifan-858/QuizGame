@@ -16,8 +16,9 @@
             <RowDefinition Height="auto"/><!--Choose a quiz category-->
             <RowDefinition Height="auto"/><!--Load a new quiz from JSON-->
             <RowDefinition Height="auto"/><!--Load JSON feedback-->
-            <RowDefinition Height="*"/><!--Quiz Overview-->
+            <RowDefinition Height="3*"/><!--Quiz Overview-->
             <RowDefinition Height="auto"/><!--Save Button-->
+            <RowDefinition Height="*"/><!--Save Button-->
             <RowDefinition Height="auto"/><!--Clear/Return Button-->
         </Grid.RowDefinitions>
 
@@ -46,21 +47,24 @@
         </StackPanel>
 
         <!--Load JSON feedback-->
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2"  x:Name="LoadJsonFeedbackTextBox" Text="Feedback"  TextWrapping="Wrap" Margin="20 0 20 0" FontSize="15" HorizontalAlignment="center"  VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2"  x:Name="LoadJsonFeedbackTextBox" Text=" "  TextWrapping="Wrap" Margin="20 0 20 0" FontSize="15" HorizontalAlignment="center"  VerticalAlignment="Center"/>
 
         <!--Quiz Overview-->
-        <GroupBox Grid.Row="4"  Grid.ColumnSpan="2" Header="Quiz Overview" FontSize="18" FontWeight="Bold" Margin="15 15 15 0">
+        <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Quiz Overview" Margin="15 15 15 0">
             <ScrollViewer>
-                <TextBox x:Name="JSONOutputTextBox" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Background="White" Padding="5"/>
+                <TextBox x:Name="JSONOutputTextBox"  TextWrapping="Wrap" FontSize="12" VerticalScrollBarVisibility="Auto" Background="White" Padding="5"/>
             </ScrollViewer>
         </GroupBox>
 
         <!--Save Button-->
         <Button Grid.Row="5" Grid.ColumnSpan="2"  x:Name="SaveButton" Content="Save to  Quiz" Width="150" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 15" Click="SaveButton_Click"/>
 
-        <Button Grid.Row="6" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click"/>
+        <!--Save JSON feedback-->
+        <TextBlock Grid.Row="6" Grid.ColumnSpan="2"  x:Name="SaveFeedbackTextBox" Text=" "  TextWrapping="Wrap" Margin="20 0 20 0" FontSize="15" HorizontalAlignment="center"  VerticalAlignment="Center"/>
         
-        <Button Grid.Row="6" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
+        <Button Grid.Row="7" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click"/>
+        
+        <Button Grid.Row="7" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
        
     </Grid>
 </Page>

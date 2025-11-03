@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.IO;
 using QuizGame.Models;
 using System.Text.Json;
+using QuizGame.Loader;
 
 namespace QuizGame
 {
@@ -22,21 +23,13 @@ namespace QuizGame
     /// </summary>
     public partial class QuizEditorPage : Page
     {
-        public string findLocalFolder;
         public string dataFolder;
         public string dataFilePath;
 
         public QuizEditorPage()
         {
             InitializeComponent();
-            findLocalFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            dataFolder = Path.Combine(findLocalFolder, "QuizData");
-
-            if (!Directory.Exists(dataFolder))
-            {
-                Directory.CreateDirectory(dataFolder);
-            }
- 
+            dataFolder = QuizDataLoader.GetLocalDataFolder();
         }
 
         public void CreateNewQuiz_Click(object sender, RoutedEventArgs e)
@@ -73,7 +66,7 @@ namespace QuizGame
             }
             catch (Exception ex)
             {
-                 CreateStatusTextBlock.Text = $"Something went wrong, {ex}";
+                 CreateStatusTextBlock.Text = $"Something went wrong, {ex.Message}";
                  CreateStatusTextBlock.Foreground = Brushes.Red;
             }
             

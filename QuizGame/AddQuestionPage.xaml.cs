@@ -112,8 +112,8 @@ namespace QuizGame
             Answer2TextBox.Clear();
             Answer3TextBox.Clear();
             Answer4TextBox.Clear();
-            SubmitFeedbckTextBlock.Text = " ";
-            PictureFeedback.Text = " ";
+            SubmitFeedbckTextBlock.Text = string.Empty;
+            PictureFeedback.Text = string.Empty;
             CorrectIndexComboBox.SelectedIndex = -1;
         }
     }
