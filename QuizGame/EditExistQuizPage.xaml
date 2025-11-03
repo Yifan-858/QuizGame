@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QuizGame"
+      xmlns:controls="clr-namespace:QuizGame.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="400"
       Title="EditExistQuizPage"
@@ -11,11 +12,13 @@
 
     <Grid Margin="12">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/><!--Title-->
+            <RowDefinition Height="auto"/><!--Choose a quiz category-->
+            <RowDefinition Height="auto"/><!--Load a new quiz from JSON-->
+            <RowDefinition Height="auto"/><!--Load JSON feedback-->
+            <RowDefinition Height="*"/><!--Quiz Overview-->
+            <RowDefinition Height="auto"/><!--Save Button-->
+            <RowDefinition Height="auto"/><!--Clear/Return Button-->
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -31,26 +34,33 @@
         <!--Choose a quiz category-->
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
             <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <ComboBox x:Name="ExistQuizComboBox" FontSize="10" Margin="20 4 20 20" SelectedIndex="-1">
-                <ComboBoxItem>Snack Quiz</ComboBoxItem>
-                <ComboBoxItem>World Game Quiz</ComboBoxItem>
-                <ComboBoxItem>Customized Quiz</ComboBoxItem>
-            </ComboBox>
-            <Button x:Name="LoadButton" Content="Load Quiz" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 0 15 0" Click="LoadButton_Click"/>
+            <controls:CustomizedQuizComboBox x:Name="CustomizedQuizComboBox" />
+            <!--need support from xmlns:controls="clr-namespace:QuizGame.Controls"-->
+            <Button  x:Name="LoadButton" Content="Load Quiz" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 0 15 20" Click="LoadButton_Click"/>
         </StackPanel>
 
-        <!--Edit Questions in the JSON-->
-        <GroupBox Grid.Row="2"  Grid.ColumnSpan="2" Header="Quiz Overview" FontSize="18" FontWeight="Bold" Margin="15 15 15 0">
+        <!--Load a new quiz from JSON-->
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" >
+            <TextBlock Text="Load a new quiz from JSON" TextWrapping="Wrap" Margin="20 0 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <Button  x:Name="AddFromJsonButton" Content="Browse JSON file" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 10 15 10" Click="AddFromJsonButton_Click"/>
+        </StackPanel>
+
+        <!--Load JSON feedback-->
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2"  x:Name="LoadJsonFeedbackTextBox" Text="Feedback"  TextWrapping="Wrap" Margin="20 0 20 0" FontSize="15" HorizontalAlignment="center"  VerticalAlignment="Center"/>
+
+        <!--Quiz Overview-->
+        <GroupBox Grid.Row="4"  Grid.ColumnSpan="2" Header="Quiz Overview" FontSize="18" FontWeight="Bold" Margin="15 15 15 0">
             <ScrollViewer>
                 <TextBox x:Name="JSONOutputTextBox" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Background="White" Padding="5"/>
             </ScrollViewer>
         </GroupBox>
 
-        <Button Grid.Row="3" Grid.ColumnSpan="2"  x:Name="SaveButton" Content="Save Quiz" Width="150" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 15" Click="SaveButton_Click"/>
+        <!--Save Button-->
+        <Button Grid.Row="5" Grid.ColumnSpan="2"  x:Name="SaveButton" Content="Save to  Quiz" Width="150" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 15" Click="SaveButton_Click"/>
 
-        <Button Grid.Row="4" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click"/>
+        <Button Grid.Row="6" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click"/>
         
-        <Button Grid.Row="4" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
+        <Button Grid.Row="6" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
        
     </Grid>
 </Page>

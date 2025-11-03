@@ -29,21 +29,6 @@ namespace QuizGame
         public AddQuestionPage()
         {
             InitializeComponent();
-            LoadAllCustomizedQuiz();
-        }
-
-        public void LoadAllCustomizedQuiz()
-        {
-            string statusMessage;
-            List<Quiz>? quizzes = QuizDataLoader.FindLocalQuizzes(out statusMessage);
-
-            if (quizzes.Count > 0)
-            {
-                foreach(Quiz q in quizzes)
-                {
-                    ExistQuizComboBox.Items.Add(q.Title);
-                }
-            }
         }
 
         public void Picture_Click(object sender, RoutedEventArgs e)
@@ -58,12 +43,12 @@ namespace QuizGame
             }
         }
 
-        public void SubmitNewQuestion_Click(object sender, RoutedEventArgs e)
+        public async void SubmitNewQuestion_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 //find the save path from the ComboBox index
-                int dataFileIndex = ExistQuizComboBox.SelectedIndex;
+                int dataFileIndex = CustomizedQuizComboBox.SelectedIndex;
 
                 if(dataFileIndex <= -1)
                 {
@@ -99,6 +84,9 @@ namespace QuizGame
                 File.WriteAllText(selectedQuizFilePath, updatedQuizJSON);
                 SubmitFeedbckTextBlock.Text = $"Saved to {selectedQuiz}";
                 SubmitFeedbckTextBlock.Foreground = Brushes.Green;
+
+                await Task.Delay(1000);
+                ClearInputField();
             }
             catch (Exception ex)
             {
@@ -108,17 +96,25 @@ namespace QuizGame
 
         public void Clear_Click(object sender, RoutedEventArgs e)
         {
-            NewQuestionStatementTextBox.Clear();
-            Answer1TextBox.Clear();
-            Answer2TextBox.Clear();
-            Answer3TextBox.Clear();
-            Answer4TextBox.Clear();
-            CorrectIndexComboBox.SelectedIndex = -1;
+            ClearInputField();
         }
 
         public void Return_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new QuizEditorPage());
+        }
+
+        public void ClearInputField()
+        {
+            CustomizedQuizComboBox.SelectedIndex = -1;
+            NewQuestionStatementTextBox.Clear();
+            Answer1TextBox.Clear();
+            Answer2TextBox.Clear();
+            Answer3TextBox.Clear();
+            Answer4TextBox.Clear();
+            SubmitFeedbckTextBlock.Text = " ";
+            PictureFeedback.Text = " ";
+            CorrectIndexComboBox.SelectedIndex = -1;
         }
     }
 }

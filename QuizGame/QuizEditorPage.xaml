@@ -26,9 +26,9 @@
 
         <!--Create quiz section-->
         <StackPanel Grid.Row="1" >
-            <TextBlock Text="Create your own quiz starting with a new quiz category here:" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <TextBlock Text="Create your brand new quiz starting with a new quiz category here:" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
             <TextBox x:Name="NewQuizCategory" Height="30" Margin="20 5 20 10"/>
-            <Button x:Name="CreateQuizChoiceButton" Content="Create New Quiz"  Margin="20 0" FontSize="20" Padding="50" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Click="CreateNewQuiz_Click"/>
+            <Button x:Name="CreateQuizChoiceButton" Content="Create New Quiz"  Margin="20 10 20 0" FontSize="20" Padding="25" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Click="CreateNewQuiz_Click"/>
         </StackPanel>
 
         <!--Create quiz feedback-->
@@ -43,7 +43,7 @@
         <StackPanel Grid.Row="4" >
             <TextBlock Text="Edit any existing quiz here:" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold"  HorizontalAlignment="Center"  VerticalAlignment="Center"/>
             <Button x:Name="AddQuestionChoiceButton" Content="Add new question to Quiz" FontSize="20" Padding="20" Margin="20 10 20 0"  FontWeight="Bold" Foreground="White" Background="#6f86d6"  BorderBrush="#6f86d6" Click="AddQuestion_Click" />
-            <Button x:Name="EditQuizChoiceButton" Content="Edit exisiting question in Quiz" FontSize="20" Padding="20" Margin="20 10 20 0" FontWeight="Bold" Foreground="White" Background="#6f86d6"  BorderBrush="#6f86d6" Click="EditExisitQuiz_Click" />
+            <Button x:Name="EditQuizChoiceButton" Content="Load or Edit Quiz from JSON" FontSize="20" Padding="20" Margin="20 10 20 0" FontWeight="Bold" Foreground="White" Background="#6f86d6"  BorderBrush="#6f86d6" Click="EditExisitQuiz_Click" />
         </StackPanel>
 
         <!--Return Button-->

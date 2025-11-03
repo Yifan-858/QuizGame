@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QuizGame.Models;
 using System.Text.Json;
 using System.IO;
+using System.Windows.Controls;
 
 namespace QuizGame.Loader
 {
@@ -32,6 +33,7 @@ namespace QuizGame.Loader
             return quiz;
         }
 
+        //Get all the Json file paths
         public static string[]? GetLocalJsonFiles()
         {
             findLocalFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -47,6 +49,7 @@ namespace QuizGame.Loader
             return jsonFilePaths;
         }
 
+        //Map json to quiz
         public static List<Quiz> FindLocalQuizzes(out string statusMessage)
         {
             var quizzes = new List<Quiz>();
@@ -84,6 +87,20 @@ namespace QuizGame.Loader
             : "No valid quiz data found.";
 
             return quizzes;
+        }
+
+        public static void LoadAllCustomizedQuizToComboBox(ComboBox comboBox)
+        {
+            string statusMessage;
+            List<Quiz>? quizzes = FindLocalQuizzes(out statusMessage);
+
+            if (quizzes.Count > 0)
+            {
+                foreach(Quiz q in quizzes)
+                {
+                    comboBox.Items.Add(q.Title);
+                }
+            }
         }
     }
 }

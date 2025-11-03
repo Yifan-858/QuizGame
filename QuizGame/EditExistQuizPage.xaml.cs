@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuizGame.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,13 +31,18 @@ namespace QuizGame
 
         }
 
+        public void AddFromJsonButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         public void SaveButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
         public void Clear_Click(object sender, RoutedEventArgs e)
         {
-
+            CustomizedQuizComboBox.SelectedIndex = -1;
         }
         public void Return_Click(object sender, RoutedEventArgs e)
         {
