@@ -24,9 +24,12 @@
         </Grid.ColumnDefinitions>
 
         <!--Logo-->
-        <Border Grid.Row="0"  Margin="2" >
+        <Border Grid.Row="0" Grid.Column="0" Margin="2" >
             <TextBlock Text="Quiz Game" FontSize="15" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c63719" />
         </Border>
+
+        <!--Return Button-->
+        <Button Grid.Row="0" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="50 0 0 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
 
         <!--Question-->
         <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="2" >

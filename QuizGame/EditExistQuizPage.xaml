@@ -29,7 +29,7 @@
 
         <!--Title-->
         <Border Grid.Row="0" Grid.ColumnSpan="2" Margin="2 8 2 2" >
-            <TextBlock Text="Edit Existing Quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Edit Quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </Border>
 
         <!--Choose a quiz category-->
@@ -43,6 +43,7 @@
         <!--Load a new quiz from JSON-->
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" >
             <TextBlock Text="Load a new quiz from JSON" TextWrapping="Wrap" Margin="20 0 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <Button Content="Read the JSON rules before you browse" Margin="20 5 20 0" Click="JsonRulesButton_Click" Background="#6f86d6" BorderBrush="#6f86d6" Foreground="White"/>
             <Button  x:Name="AddFromJsonButton" Content="Browse JSON file" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 10 15 10" Click="AddFromJsonButton_Click"/>
         </StackPanel>
 

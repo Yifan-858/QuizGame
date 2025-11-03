@@ -68,6 +68,33 @@ namespace QuizGame
             }
         }
 
+        public void JsonRulesButton_Click(object sender, RoutedEventArgs e)
+        {
+            string guideText = @"JSON Format Guide:
+
+            {
+              ""Title"": ""Quiz Title"",
+              ""Questions"": [
+                {
+                  ""Statement"": ""Question text?"",
+                  ""CorrectAnswer"":""0"",
+                  ""ImagePath"": ""sample: C:/Users/username/Pictures/Image.jpg"",
+                  ""Answers"": [""Option1"", ""Option2"", ""Option3"", ""Option4""]
+                }
+              ]
+            }
+
+            Notes:
+            - Title: string
+            - Questions: list of Questions
+            - CorrectAnswer: A integer betweem 0 - 3
+            - ImagePath: Absolute file path, beware of /
+            - Answers: array of strings (4 options)
+            ";
+
+    MessageBox.Show(guideText, "JSON Format Guide", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
         public async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string jsonString = JSONOutputTextBox.Text;

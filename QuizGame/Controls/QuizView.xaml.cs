@@ -42,5 +42,13 @@ namespace QuizGame
 
             ViewModel.NextQuestion();
         }
+
+        public void Return_Click(object sender, RoutedEventArgs e)
+        {
+            var startPage = new StartPage();
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            navService.Navigate(startPage);
+
+        }
     }
 }

@@ -63,7 +63,7 @@ namespace QuizGame.Loader
             //Check if there is any json file in the folder
             if(jsonFileNames == null || jsonFileNames.Length == 0)
             {
-                statusMessage = "There is no quiz yet. Create one in Quiz Editor.";
+                statusMessage = "You haven't add any quiz yet. Create one in Quiz Editor.";
                 return quizzes;
             }
 
