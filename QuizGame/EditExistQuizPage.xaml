@@ -34,7 +34,7 @@
 
         <!--Choose a quiz category-->
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
-            <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Choose an existing quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
             <controls:CustomizedQuizComboBox x:Name="CustomizedQuizComboBox" />
             <!--need support from xmlns:controls="clr-namespace:QuizGame.Controls"-->
             <Button  x:Name="LoadButton" Content="Load Quiz" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 0 15 20" Click="LoadButton_Click"/>
@@ -51,7 +51,7 @@
         <TextBlock Grid.Row="3" Grid.ColumnSpan="2"  x:Name="LoadJsonFeedbackTextBox" Text=" "  TextWrapping="Wrap" Margin="20 0 20 0" FontSize="15" HorizontalAlignment="center"  VerticalAlignment="Center"/>
 
         <!--Quiz Overview-->
-        <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Quiz Overview" Margin="15 15 15 0">
+        <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Quiz Overview (Edit or Remove your question here)" Margin="15 15 15 0">
             <ScrollViewer>
                 <TextBox x:Name="JSONOutputTextBox"  TextWrapping="Wrap" FontSize="12" VerticalScrollBarVisibility="Auto" Background="White" Padding="5"/>
             </ScrollViewer>

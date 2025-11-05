@@ -86,7 +86,7 @@
 
         <!--Mix Quiz-->
         <Border Grid.Row="10"  Grid.ColumnSpan="2" Margin="0 5"  >
-            <Button Content="Shuffle the Quiz" FontSize="20" FontWeight="Bold" Click="Category_Click" Tag="Game Quiz" Foreground="White">
+            <Button Content="Shuffle the Quiz" FontSize="20" FontWeight="Bold" Click="MixCategory_Click" Tag="Game Quiz" Foreground="White">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Color="#c63719" Offset="0.0"/>

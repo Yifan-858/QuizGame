@@ -73,7 +73,15 @@ namespace QuizGame
                 string[] answers = { Answer1TextBox.Text, Answer2TextBox.Text, Answer3TextBox.Text, Answer4TextBox.Text };
 
                 //add in the new question
-                selectedQuiz.AddQuestion(NewQuestionStatementTextBox.Text,CorrectIndexComboBox.SelectedIndex, pictureAbsolutePath,answers);
+                if(pictureAbsolutePath == null)
+                {
+                    string defaultPicturePath = "Image/quizDefault.jpg";
+                    selectedQuiz.AddQuestion(NewQuestionStatementTextBox.Text,CorrectIndexComboBox.SelectedIndex,defaultPicturePath,answers);
+                }
+                else
+                {
+                    selectedQuiz.AddQuestion(NewQuestionStatementTextBox.Text,CorrectIndexComboBox.SelectedIndex,pictureAbsolutePath,answers);
+                }
 
                 //submit the form
                 var options = new JsonSerializerOptions
