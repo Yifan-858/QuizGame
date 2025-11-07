@@ -37,14 +37,14 @@
             <TextBlock Text="Choose an existing quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
             <controls:CustomizedQuizComboBox x:Name="CustomizedQuizComboBox" />
             <!--need support from xmlns:controls="clr-namespace:QuizGame.Controls"-->
-            <Button  x:Name="LoadButton" Content="Load Quiz" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 0 15 20" Click="LoadButton_Click"/>
+            <Button  x:Name="LoadButton" Content="Load Quiz" Width="150" FontSize="12" FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Height="40" Margin="0 0 15 20" Click="LoadButton_Click" Cursor="Hand"/>
         </StackPanel>
 
         <!--Load a new quiz from JSON-->
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" >
             <TextBlock Text="Load a new quiz from JSON" TextWrapping="Wrap" Margin="20 0 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <Button Content="Read the JSON rules before you browse" Margin="20 5 20 0" Click="JsonRulesButton_Click" Background="#6f86d6" BorderBrush="#6f86d6" Foreground="White"/>
-            <Button  x:Name="AddFromJsonButton" Content="Browse JSON file" Width="150" FontSize="12" FontWeight="Bold" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 10 15 10" Click="AddFromJsonButton_Click"/>
+            <Button Content="Click here to read the JSON rules before you browse" Margin="20 5 20 0" Click="JsonRulesButton_Click" Background="#eee6f5" BorderBrush="#eee6f5" Foreground="#2a1b7d" Cursor="Hand"/>
+            <Button  x:Name="AddFromJsonButton" Content="Browse JSON file" Width="150" FontSize="12" FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Height="40" Margin="0 10 15 10" Click="AddFromJsonButton_Click" Cursor="Hand"/>
         </StackPanel>
 
         <!--Load JSON feedback-->
@@ -53,19 +53,19 @@
         <!--Quiz Overview-->
         <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Quiz Overview (Edit or Remove your question here)" Margin="15 15 15 0">
             <ScrollViewer>
-                <TextBox x:Name="JSONOutputTextBox"  TextWrapping="Wrap" FontSize="12" VerticalScrollBarVisibility="Auto" Background="White" Padding="5"/>
+                <TextBox x:Name="JSONOutputTextBox"  TextWrapping="Wrap" FontSize="12" VerticalScrollBarVisibility="Auto" Background="white" Padding="5"/>
             </ScrollViewer>
         </GroupBox>
 
         <!--Save Button-->
-        <Button Grid.Row="5" Grid.ColumnSpan="2"  x:Name="SaveButton" Content="Save to  Quiz" Width="150" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="White" Background="#c63719" BorderBrush="#c63719" Height="40" Margin="0 15" Click="SaveButton_Click"/>
+        <Button Grid.Row="5" Grid.ColumnSpan="2"  x:Name="SaveButton" Content="Save to  Quiz" Width="150" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Height="40" Margin="0 15" Click="SaveButton_Click" Cursor="Hand"/>
 
         <!--Save JSON feedback-->
         <TextBlock Grid.Row="6" Grid.ColumnSpan="2"  x:Name="SaveFeedbackTextBox" Text=" "  TextWrapping="Wrap" Margin="20 0 20 0" FontSize="15" HorizontalAlignment="center"  VerticalAlignment="Center"/>
-        
-        <Button Grid.Row="7" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click"/>
-        
-        <Button Grid.Row="7" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
+
+        <Button Grid.Row="7" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click" Cursor="Hand"/>
+
+        <Button Grid.Row="7" Grid.Column="1" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click" Cursor="Hand"/>
        
     </Grid>
 </Page>

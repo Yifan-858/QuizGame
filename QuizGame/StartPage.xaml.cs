@@ -63,13 +63,14 @@ namespace QuizGame
                 Button button = new Button
                 {
                     Content = q.Title,
-                    FontSize=20,
-                    Margin= new Thickness(0,5,0,5),
+                    FontSize=15,
+                    Margin= new Thickness(50,5,50,5),
                     FontWeight= FontWeights.Bold,
-                    Foreground=Brushes.White,
-                    Background=(Brush)new BrushConverter().ConvertFrom("#6f86d6"), 
-                    BorderBrush=(Brush)new BrushConverter().ConvertFrom("#6f86d6"),
-                    Tag = q  //store the whole quiz object in the tag
+                    Foreground=(Brush)new BrushConverter().ConvertFrom("#2a1b7d"),
+                    Background=(Brush)new BrushConverter().ConvertFrom("#eee6f5"), 
+                    BorderBrush=(Brush)new BrushConverter().ConvertFrom("#eee6f5"),
+                    Tag = q,  //store the whole quiz object in the tag,
+                    Cursor= Cursors.Hand 
                 };
 
                 button.Click += LocalQuizCategory_Click;

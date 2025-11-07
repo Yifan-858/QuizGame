@@ -10,11 +10,12 @@
       Background="White"
   >
 
-    <Grid>
+    <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/><!--Title-->
-            <RowDefinition Height="auto"/><!--Choose a quiz category-->
+            <RowDefinition Height="*"/><!--Choose a quiz category-->
             <RowDefinition Height="auto"/><!--Shuffle Button-->
+            <RowDefinition Height="auto"/><!--Feedback-->
             <RowDefinition Height="auto"/><!--Return Button-->
         </Grid.RowDefinitions>
 
@@ -25,14 +26,35 @@
 
         <!--Choose quiz category-->
         <StackPanel Grid.Row="1" x:Name="CategoryCheckboxContainer"  Margin="20 20 20 0">
-            <TextBlock Text="Choose quiz category" TextWrapping="Wrap" Margin="0 0 0 10" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Choose quiz category (at least 2)" TextWrapping="Wrap" Margin="0 0 0 10" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </StackPanel>
 
         <!--Shuffle Button-->
-        <Button Grid.Row="2" x:Name="ShuffleButton" Content="Shuffle the selected categories!"  Margin="20 10" FontSize="15"  FontWeight="Medium" BorderBrush="Gray" Click="LoadMixedQues_Click"/>
+        <Button Grid.Row="2" x:Name="ShuffleButton" Content="Shuffle the selected quizzes!"  Margin="20 10" Padding="20" FontSize="18"  FontWeight="Medium" Foreground="white" Click="LoadMixedQues_Click" Cursor="Hand">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#2a1b7d" Offset="0.0"/>
+                    <GradientStop Color="#b69bc5" Offset="0.25"/>
+                    <GradientStop Color="#2a1b7d" Offset="0.75"/>
+                    <GradientStop Color="#b69bc5" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.Background>
 
+            <Button.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#2a1b7d" Offset="0.0"/>
+                    <GradientStop Color="#b69bc5" Offset="0.45"/>
+                    <GradientStop Color="#2a1b7d" Offset="0.75"/>
+                    <GradientStop Color="#b69bc5" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+          </Button>
+
+        <!--Feedback-->
+        <TextBlock Grid.Row="3" x:Name="ShuffleFeedback"  TextWrapping="Wrap" Margin="20 5" FontSize="15" Foreground="Red" HorizontalAlignment="center"  VerticalAlignment="Center"/>
+        
         <!--Return Button-->
-        <Button Grid.Row="3" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
+        <Button Grid.Row="4" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click" Cursor="Hand"/>
 
     </Grid>
 </Page>

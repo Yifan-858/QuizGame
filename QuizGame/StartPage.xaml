@@ -12,16 +12,15 @@
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            
+            
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -30,75 +29,115 @@
         </Grid.ColumnDefinitions>
 
         <!--Logo-->
-        <Border Grid.Row="0"  Margin="2">
-            <TextBlock Text="Quiz Game" FontSize="15" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c63719" />
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Margin="2">
+            <TextBlock Text="Quiz Game Generator" FontSize="20
+                       " FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#2a1b7d" />
         </Border>
 
         <!--Title-->
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="2 8 2 2" VerticalAlignment="Center" >
-            <TextBlock Text="Choose one category" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <TextBlock Text="or shuffle the quiz!" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-        </StackPanel>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="2 2" VerticalAlignment="Center" Text="Choose one mode to begin" TextWrapping="Wrap" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" Foreground="#b69bc5"/>
+        
 
         <!--Default quiz subtitle-->
-        <Border Grid.Row="2" Grid.ColumnSpan="2" Margin="2 20 2 2" >
-            <TextBlock Text="Built-in Quiz Category" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-        </Border>
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Margin="0 30 0 8" 
+        Background="#2a1b7d" CornerRadius="15">
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </StackPanel.Resources>
 
-        <!--Default Quiz 1-->
-        <Border Grid.Row="3"  Grid.Column="0"  Margin="0 5 5 5" >
-            <Button Content="Snack Quiz" FontSize="20" FontWeight="Bold" Click="Category_Click" Tag="Snack Quiz" Foreground="White" Background="#c63719" BorderBrush="#c63719"/>
-        </Border>
+                <TextBlock Text="Quick Start Mode: play built-in quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="15" Foreground="White" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 8"/>
 
-        <!--Default Quiz 2-->
-        <Border Grid.Row="3"  Grid.Column="1" Margin="5 5 0 5" >
-            <Button Content="World Game Quiz" FontSize="20" FontWeight="Bold" Click="Category_Click" Tag="Game Quiz" Foreground="White" Background="#c63719" BorderBrush="#c63719"/>
+                <Button Content="Snack Quiz" Margin="100 10" Padding="20 8" FontSize="14" FontWeight="Bold" Foreground="#2a1b7d" Background="#eee6f5" BorderBrush="#eee6f5" Click="Category_Click" Tag="Snack Quiz" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" />
+
+                <Button Content="World Game Quiz" Margin="100 10" Padding="20 8" FontSize="14" FontWeight="Bold" Foreground="#2a1b7d" Background="#eee6f5" BorderBrush="#eee6f5" Click="Category_Click" Tag="Game Quiz" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" />
+
+            </StackPanel>
         </Border>
 
         <!--Quiz Editor-->
-        <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2 20 2 2" >
-            <TextBlock Text="Enter Quiz Editor to add quiz category" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.ColumnSpan="2" Margin="0 5">
-            <Button Content="Quiz Editor" FontSize="20" FontWeight="Bold" Click="EnterEditor_Click" Tag="Game Quiz" Foreground="White" Background="#23074d" BorderBrush="#23074d" />
-        </Border>
+        <Border Grid.Row="3" Grid.ColumnSpan="2" Margin="0 8" 
+        Background="#eee6f5" CornerRadius="15" >
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </StackPanel.Resources>
 
-        <!--Customized Quiz subtitle-->
-        <Border Grid.Row="6" Grid.ColumnSpan="2" Margin="2 20 2 2" >
-            <TextBlock Text="Your Quiz Category" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                <TextBlock  Grid.Row="3" Grid.ColumnSpan="2" Text="Editor Mode: add your own quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 8" />
+
+                <Button Content="Quiz Editor" Margin="50 10" Padding="30 15" FontSize="15" FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Click="EnterEditor_Click" Tag="Game Quiz" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
+                
+            </StackPanel>
+        </Border>
+        
+
+        <!--Customized Quiz Title-->
+        <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2 20 2 2" >
+            <TextBlock  Grid.Row="3" Grid.ColumnSpan="2" Text="Your Quiz Mode: play customized quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 8" />
         </Border>
 
         <!--Customized Quiz-->
-        <ScrollViewer  Grid.Row="7"  Grid.ColumnSpan="2" Margin="0 5"  >
-            <StackPanel x:Name="CustomizedQuizContainer"  >
+        <ScrollViewer  Grid.Row="5"  Grid.ColumnSpan="2" Margin="0 5"  >
+            <StackPanel x:Name="CustomizedQuizContainer">
             </StackPanel>
         </ScrollViewer>
 
         <!--Feedback-->
-        <Border   Grid.Row="8" Grid.ColumnSpan="2" Margin="2 20 2 2" >
+        <Border   Grid.Row="6" Grid.ColumnSpan="2" Margin="2 20 2 2" >
             <TextBlock x:Name="CustomizedQuizFeedbackTextBlock" Text="" TextWrapping="Wrap" FontWeight="Bold" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </Border>
 
         <!--Mix Quiz subtitle-->
-        <Border Grid.Row="9" Grid.ColumnSpan="2" Margin="2 20 2 2" >
+        <Border Grid.Row="7" Grid.ColumnSpan="2" Margin="2 20 2 2" >
             <TextBlock Text="Mix Chosen Cateory" TextWrapping="Wrap" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </Border>
 
         <!--Mix Quiz-->
-        <Border Grid.Row="10"  Grid.ColumnSpan="2" Margin="0 5"  >
-            <Button Content="Shuffle the Quiz" FontSize="20" FontWeight="Bold" Click="MixCategory_Click" Tag="Game Quiz" Foreground="White">
+        <Border Grid.Row="8"  Grid.ColumnSpan="2" Margin="0 5"  >
+            <Button Content="Shuffle the Quiz" FontSize="20" FontWeight="Bold" Click="MixCategory_Click" Tag="Game Quiz" Foreground="White" Cursor="Hand">
                 <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#c63719" Offset="0.0"/>
-                        <GradientStop Color="#23074d" Offset="0.5"/>
-                        <GradientStop Color="#6f86d6" Offset="1.0"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#2a1b7d" Offset="0.0"/>
+                        <GradientStop Color="#b69bc5" Offset="0.25"/>
+                        <GradientStop Color="#2a1b7d" Offset="0.75"/>
+                        <GradientStop Color="#b69bc5" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Button.Background>
 
                 <Button.BorderBrush>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#c63719" Offset="0.0"/>
-                        <GradientStop Color="#6f86d6" Offset="1.0"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#2a1b7d" Offset="0.0"/>
+                        <GradientStop Color="#b69bc5" Offset="0.45"/>
+                        <GradientStop Color="#2a1b7d" Offset="0.75"/>
+                        <GradientStop Color="#b69bc5" Offset="1.0"/>
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>

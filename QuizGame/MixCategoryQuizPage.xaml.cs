@@ -37,7 +37,33 @@ namespace QuizGame
 
         public void GetCategoryCheckbox()
         {
-            if (allQuizzes == null) return;
+            if (allQuizzes == null ||  allQuizzes.Count == 0) 
+            { 
+                TextBlock text = new TextBlock
+                {
+                    Text = "You dont't have any quiz. Please add more in quiz editor.",
+                    TextWrapping = TextWrapping.Wrap,
+                    FontSize = 14,
+                    Foreground = Brushes.Red, 
+                    Margin = new Thickness(5)
+                };
+
+                CategoryCheckboxContainer.Children.Add(text);
+            }
+
+            if( allQuizzes.Count == 1)
+            {
+                TextBlock text = new TextBlock
+                {
+                    Text = "There are not enough quizzes to be mixed. Please add more in quiz editor.",
+                    TextWrapping = TextWrapping.Wrap,
+                    FontSize = 14,
+                    Foreground = Brushes.Red, 
+                    Margin = new Thickness(5)
+                };
+
+                CategoryCheckboxContainer.Children.Add(text);
+            }
 
             for (int i = 0; i < allQuizzes.Count; i++)
             {
@@ -85,6 +111,18 @@ namespace QuizGame
             {
                 Title = "Shuffle the quiz",
             };
+
+            if(selectedQuizzes == null)
+            {
+                ShuffleFeedback.Text = "Add more quiz in quiz editor";
+                return;
+            }
+
+            if( selectedQuizzes.Count>=0 && selectedQuizzes.Count < 2)
+            {
+                ShuffleFeedback.Text = "Choose at least 2 quizzes";
+                return;
+            }
 
             foreach(Quiz q in selectedQuizzes)
             {
