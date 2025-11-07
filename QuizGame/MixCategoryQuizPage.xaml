@@ -1,0 +1,38 @@
+﻿<Page x:Class="QuizGame.MixCategoryQuizPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuizGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="400"
+      Title="MixCategoryQuizPage"  
+      Background="White"
+  >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/><!--Title-->
+            <RowDefinition Height="auto"/><!--Choose a quiz category-->
+            <RowDefinition Height="auto"/><!--Shuffle Button-->
+            <RowDefinition Height="auto"/><!--Return Button-->
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <Border Grid.Row="0"  Margin="2 8 2 2" >
+            <TextBlock Text="Shuffle quizzes" TextWrapping="Wrap" FontWeight="Bold" FontSize="30" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+        </Border>
+
+        <!--Choose quiz category-->
+        <StackPanel Grid.Row="1" x:Name="CategoryCheckboxContainer"  Margin="20 20 20 0">
+            <TextBlock Text="Choose quiz category" TextWrapping="Wrap" Margin="0 0 0 10" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!--Shuffle Button-->
+        <Button Grid.Row="2" x:Name="ShuffleButton" Content="Shuffle the selected categories!"  Margin="20 10" FontSize="15"  FontWeight="Medium" BorderBrush="Gray" Click="LoadMixedQues_Click"/>
+
+        <!--Return Button-->
+        <Button Grid.Row="3" x:Name="ReturnButton" Content="Return"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Return_Click"/>
+
+    </Grid>
+</Page>
