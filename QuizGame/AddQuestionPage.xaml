@@ -36,7 +36,7 @@
 
         <!--Choose a quiz category-->
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
-            <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Choose a quiz category" TextWrapping="Wrap" Margin="20 10 20 0" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
             <controls:CustomizedQuizComboBox x:Name="CustomizedQuizComboBox" />
             <!--need support from xmlns:controls="clr-namespace:QuizGame.Controls"-->
         </StackPanel>
@@ -85,17 +85,17 @@
 
         <!--Picutre-->
         <StackPanel Grid.Row="6" Grid.ColumnSpan="2">
-            <TextBlock Text="Select a picture " TextWrapping="Wrap" Margin="20 9 20 9"  FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center" />
-            <TextBlock Text="A default image would be added if you don't have one" TextWrapping="Wrap" Margin="20 4" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock Text="Select a picture " TextWrapping="Wrap" Margin="20 9 20 0"  FontSize="18" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center" />
+            <TextBlock Text="A default image would be added if you don't have one" TextWrapping="Wrap" Margin="20 0" FontSize="12" Foreground="Gray" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
             <Button Grid.Row="10" Grid.Column="1" x:Name="PictureButton" Content="Brower"  FontSize="12"  FontWeight="Medium" Background="#eee6f5" BorderBrush="#eee6f5" Foreground="#2a1b7d" Click="Picture_Click"  Margin="20 5" Cursor="Hand"/>
-            <TextBlock x:Name="PictureFeedback" TextWrapping="Wrap" Margin="02"  FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock x:Name="PictureFeedback" TextWrapping="Wrap" Margin="20 0"  FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
         </StackPanel>
 
         <!--Submit Button-->
         <Button Grid.Row="7" Grid.ColumnSpan="2" x:Name="SubmitNewQuestionButton" Content="Submit"  Margin="20 0" FontSize="20"  FontWeight="Medium" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Click="SubmitNewQuestion_Click" Cursor="Hand"/>
         
         <!--Add question feedback-->
-        <TextBlock x:Name="SubmitFeedbckTextBlock" Grid.Row="8"  Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="20 10" FontSize="12" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+        <TextBlock x:Name="SubmitFeedbckTextBlock" Grid.Row="8"  Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="20 10" FontSize="12" HorizontalAlignment="Center"  VerticalAlignment="Center" />
 
         <!--Clear Button-->
         <Button Grid.Row="9" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click" Cursor="Hand"/>

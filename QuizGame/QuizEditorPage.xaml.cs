@@ -15,6 +15,7 @@ using System.IO;
 using QuizGame.Models;
 using System.Text.Json;
 using QuizGame.Loader;
+using System.Text.RegularExpressions;
 
 namespace QuizGame
 {
@@ -56,7 +57,8 @@ namespace QuizGame
 
                 string jsonString = JsonSerializer.Serialize(newQuiz, options);
 
-                string fileName = string.Join("_", quizCategory.Split(Path.GetInvalidFileNameChars()));
+                string fileName = quizCategory.Replace(" ", "_");
+
                 dataFilePath = Path.Combine(dataFolder, $"{fileName}.json");
 
                 File.WriteAllText(dataFilePath, jsonString);

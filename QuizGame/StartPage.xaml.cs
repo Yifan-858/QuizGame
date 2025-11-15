@@ -55,7 +55,8 @@ namespace QuizGame
                     FontSize = 12,
                     HorizontalAlignment = HorizontalAlignment.Left,
                     VerticalAlignment = VerticalAlignment.Center,
-                    Margin= new Thickness(20,8,20,8)
+                    Margin= new Thickness(20,8,20,8),
+                    Foreground=(Brush)new BrushConverter().ConvertFrom("#2a1b7d"),
                 });
 
                 return;

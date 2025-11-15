@@ -40,6 +40,7 @@ namespace QuizGame
             {
                 pictureAbsolutePath = dialog.FileName.Replace("\\", "/");; 
                 PictureFeedback.Text = $"Add {pictureAbsolutePath}"; 
+                PictureFeedback.Foreground = Brushes.Green;
             }
         }
 
@@ -50,29 +51,58 @@ namespace QuizGame
                 //find the save path from the ComboBox index
                 int dataFileIndex = CustomizedQuizComboBox.SelectedIndex;
 
+                //Handle if a quiz is not selected
                 if(dataFileIndex <= -1)
                 {
                     SubmitFeedbckTextBlock.Text = "Invalid quiz. Please select a category.";
+                    SubmitFeedbckTextBlock.Foreground = Brushes.Red;
                     return;
                 }
 
+                //Handle if file not found, missing file path
                 string[]? jsonFilePaths = QuizDataLoader.GetLocalJsonFiles();
 
                 if(jsonFilePaths == null || jsonFilePaths.Length == 0 || dataFileIndex >= jsonFilePaths.Length)
                 {
                     SubmitFeedbckTextBlock.Text = "Quiz File not found";
+                    SubmitFeedbckTextBlock.Foreground = Brushes.Red;
                     return;
                 }
 
+                //Handle if JSON cannout be loaded
                 string selectedQuizFilePath = jsonFilePaths[dataFileIndex];
 
-                //load the selectQuiz
                 string jsonString = File.ReadAllText(selectedQuizFilePath);
                 Quiz selectedQuiz = JsonSerializer.Deserialize<Quiz>(jsonString)?? throw new Exception("Failed to load quiz from JSON.");;
 
-                string[] answers = { Answer1TextBox.Text, Answer2TextBox.Text, Answer3TextBox.Text, Answer4TextBox.Text };
+                //Handle no new question made
+                string newQuestion = NewQuestionStatementTextBox.Text;
+                if (string.IsNullOrEmpty(newQuestion))
+                {
+                    SubmitFeedbckTextBlock.Text = "Please enter a question";
+                    SubmitFeedbckTextBlock.Foreground = Brushes.Red;
+                    return;
+                }
 
-                //add in the new question
+                //Handle if answers are not filled 
+                string[] answers = { Answer1TextBox.Text, Answer2TextBox.Text, Answer3TextBox.Text, Answer4TextBox.Text };
+                if (answers.Any(a=>string.IsNullOrEmpty(a)))
+                {
+                    SubmitFeedbckTextBlock.Text = "Please fill in all the answer options";
+                    SubmitFeedbckTextBlock.Foreground = Brushes.Red;
+                    return;
+                }
+
+                //Handel if a correct answer is not marked
+                int correctAnswer = CorrectIndexComboBox.SelectedIndex;
+                if(correctAnswer < 0)
+                {
+                    SubmitFeedbckTextBlock.Text = "Please mark which answer is correct";
+                    SubmitFeedbckTextBlock.Foreground = Brushes.Red;
+                    return;
+                }
+
+                //Handle if no pic is loaded
                 if(pictureAbsolutePath == null)
                 {
                     string defaultPicturePath = "Image/quizDefault.jpg";
@@ -99,6 +129,7 @@ namespace QuizGame
             catch (Exception ex)
             {
                 SubmitFeedbckTextBlock.Text = $"Something went wrong. {ex.Message}";
+                SubmitFeedbckTextBlock.Foreground = Brushes.Red;
             }
         }
 
