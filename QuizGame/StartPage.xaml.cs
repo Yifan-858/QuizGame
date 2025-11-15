@@ -95,6 +95,7 @@ namespace QuizGame
             else
             {
                 CustomizedQuizFeedbackTextBlock.Text = "No question in the quiz yet. Add more in Quiz Editor.";
+                CustomizedQuizFeedbackTextBlock.Foreground = Brushes.Red;
             }
             
         }

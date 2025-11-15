@@ -22,18 +22,29 @@ namespace QuizGame.Models
         }
         private int previousIndex = -1;
 
-        public Question GetRandomQuestion()
+        public Question? GetRandomQuestion()
         {
             int i = -1;
 
+            if (Questions.Count == 0)
+            {
+                throw new InvalidOperationException("The quiz has no questions. Add one in quiz editor");
+            }
+
+            if (Questions.Count == 1)
+            {
+                previousIndex = 0;
+                return Questions[0]; 
+            }
+          
             do
             {
-               i = Randomizer.Next(0, Questions.Count);
+                i = Randomizer.Next(0, Questions.Count);
             } while (previousIndex == i);
 
             previousIndex = i;
 
-            return Questions[i];
+            return Questions[i];    
         }
 
         public void AddQuestion(string statement, int correctAnswer, string imagePath, params string[] answers)

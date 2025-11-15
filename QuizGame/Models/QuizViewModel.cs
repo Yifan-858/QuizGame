@@ -36,7 +36,16 @@ namespace QuizGame.Models
         {
             Quiz = quiz;
 
-            CurrentQuestion = Quiz.GetRandomQuestion();
+            try
+            {
+                CurrentQuestion = Quiz.GetRandomQuestion();
+            }
+            catch (Exception ex)
+            {
+                CurrentQuestion = null;
+                AnswerFeedback = $"{ex}";
+            }
+            
             SelectedAnswerIndex = -1;
 
             OnPropertyChanged("CurrentQuestion");
