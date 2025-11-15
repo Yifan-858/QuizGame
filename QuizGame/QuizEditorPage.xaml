@@ -35,7 +35,8 @@
                         BorderThickness="1"
                         CornerRadius="5">
                                     <ContentPresenter HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"/>
+                                      VerticalAlignment="Center"
+                                      Margin="{TemplateBinding Padding}"/>
                                 </Border>
                             </ControlTemplate>
                         </Setter.Value>
@@ -47,9 +48,9 @@
             <TextBlock Text="Enter quiz name" TextWrapping="Wrap" Margin="20 5 20 0" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
             <TextBlock Text="Example: CityQuiz" TextWrapping="Wrap" Margin="20 4" FontSize="12"  Foreground="Gray" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
             <TextBox x:Name="NewQuizCategory" Height="30" Margin="20 5 20 5"/>
-            <Button x:Name="CreateQuizChoiceButton" Content="Create New Quiz"  Margin="20 5 20 0" FontSize="15" Padding="15" FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Click="CreateNewQuiz_Click" Cursor="Hand"/>
+            <Button x:Name="CreateQuizChoiceButton" Content="Create New Quiz"  Margin="50 5 50 0" FontSize="18" Padding="12" FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Click="CreateNewQuiz_Click" Cursor="Hand"/>
             <TextBlock Text="Add question to the quiz created above" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-            <Button x:Name="AddQuestionChoiceButton" Content="Add new question" FontSize="15" Padding="20" Margin="20 10 20 0"  FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d"  BorderBrush="#2a1b7d" Click="AddQuestion_Click" Cursor="Hand" />
+            <Button x:Name="AddQuestionChoiceButton" Content="Add new question" FontSize="18" Padding="12" Margin="50 10 50 0"  FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d"  BorderBrush="#2a1b7d" Click="AddQuestion_Click" Cursor="Hand" />
         </StackPanel>
 
         <!--Create quiz feedback-->
@@ -67,7 +68,8 @@
                         BorderThickness="1"
                         CornerRadius="5">
                                     <ContentPresenter HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"/>
+                                      VerticalAlignment="Center"
+                                      Margin="{TemplateBinding Padding}"/>
                                 </Border>
                             </ControlTemplate>
                         </Setter.Value>
@@ -75,8 +77,8 @@
                 </Style>
             </StackPanel.Resources>
             <Border BorderBrush="Gray" BorderThickness="0,1,0,0" />
-            <TextBlock Text="Or you have read-made quiz" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-            <Button x:Name="EditQuizChoiceButton" Content="Load or Edit Quiz from JSON" FontSize="15" Padding="20" Margin="20 10 20 0" FontWeight="Bold" Foreground="#2a1b7d" Background="#eee6f5"  BorderBrush="#eee6f5" Click="EditExisitQuiz_Click" Cursor="Hand"/>
+            <TextBlock Text="Or you have read-made quiz" TextWrapping="Wrap" Margin="20 20 20 0" FontSize="23" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <Button x:Name="EditQuizChoiceButton" Content="Load or Edit Quiz from JSON" FontSize="15" Padding="12" Margin="50 10 50 0" FontWeight="Bold" Foreground="#2a1b7d" Background="#eee6f5"  BorderBrush="#eee6f5" Click="EditExisitQuiz_Click" Cursor="Hand"/>
         </StackPanel>
 
         <!--Return Button-->

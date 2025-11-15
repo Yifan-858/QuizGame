@@ -45,7 +45,7 @@ namespace QuizGame
             string statusMessage;
             List<Quiz>? quizzes = QuizDataLoader.FindLocalQuizzes(out statusMessage);
 
-            CustomizedQuizContainer.Children.Clear();
+            //CustomizedQuizContainer.Children.Clear();
 
             if(quizzes.Count == 0)
             {
@@ -53,6 +53,9 @@ namespace QuizGame
                 {
                     Text = statusMessage,
                     FontSize = 12,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin= new Thickness(20,8,20,8)
                 });
 
                 return;

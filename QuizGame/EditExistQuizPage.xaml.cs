@@ -123,10 +123,10 @@ namespace QuizGame
                 //save quiz json
                 File.WriteAllText(fullSavePath, jsonString);
 
-                SaveFeedbackTextBox.Text = $"Saved to {fullSavePath}";
+                SaveFeedbackTextBox.Text = $"Saved to {fullSavePath}! Go to Your Quiz Mode and play your quiz!";
                 SaveFeedbackTextBox.Foreground = Brushes.Green;
 
-                await Task.Delay(1000);
+                await Task.Delay(2000);
                 ClearInputField();
             }
             catch (Exception ex)

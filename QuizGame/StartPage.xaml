@@ -14,11 +14,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="1.2*"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.8*"/>
             
             
         </Grid.RowDefinitions>
@@ -71,7 +70,7 @@
 
         <!--Quiz Editor-->
         <Border Grid.Row="3" Grid.ColumnSpan="2" Margin="0 8" 
-        Background="#eee6f5" CornerRadius="15" >
+        Background="#2a1b7d" CornerRadius="15" >
             <StackPanel>
                 <StackPanel.Resources>
                     <Style TargetType="Button">
@@ -91,9 +90,9 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <TextBlock  Grid.Row="3" Grid.ColumnSpan="2" Text="Editor Mode: add your own quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 8" />
+                <TextBlock  Grid.Row="3" Grid.ColumnSpan="2" Text="Editor Mode: add your own quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="15" Foreground="White" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 8" />
 
-                <Button Content="Quiz Editor" Margin="50 10" Padding="30 15" FontSize="15" FontWeight="Bold" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Click="EnterEditor_Click" Tag="Game Quiz" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
+                <Button Content="Quiz Editor" Margin="50 10" Padding="30 15" FontSize="15" FontWeight="Bold" Foreground="#2a1b7d" Background="#eee6f5" BorderBrush="#eee6f5" Click="EnterEditor_Click" Tag="Game Quiz" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
                 
             </StackPanel>
         </Border>
@@ -101,18 +100,15 @@
 
         <!--Customized Quiz Title-->
         <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="2 20 2 2" >
-            <TextBlock  Grid.Row="3" Grid.ColumnSpan="2" Text="Your Quiz Mode: play customized quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 8" />
-        </Border>
 
-        <!--Customized Quiz-->
-        <ScrollViewer  Grid.Row="5"  Grid.ColumnSpan="2" Margin="0 5"  >
-            <StackPanel x:Name="CustomizedQuizContainer">
+            <StackPanel x:Name="CustomizedQuizContainer"  >
+                <TextBlock  Text="Your Quiz Mode: play customized quiz" TextWrapping="Wrap" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 8" />
             </StackPanel>
-        </ScrollViewer>
+        </Border>
 
         <!--Feedback-->
         <Border   Grid.Row="6" Grid.ColumnSpan="2" Margin="2 20 2 2" >
-            <TextBlock x:Name="CustomizedQuizFeedbackTextBlock" Text="" TextWrapping="Wrap" FontWeight="Bold" FontSize="12" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <TextBlock x:Name="CustomizedQuizFeedbackTextBlock" Text="" TextWrapping="Wrap" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
         </Border>
 
         <!--Mix Quiz subtitle-->

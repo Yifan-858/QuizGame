@@ -61,7 +61,7 @@
         <Button Grid.Row="5" Grid.ColumnSpan="2"  x:Name="SaveButton" Content="Save to  Quiz" Width="150" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="#eee6f5" Background="#2a1b7d" BorderBrush="#2a1b7d" Height="40" Margin="0 15" Click="SaveButton_Click" Cursor="Hand"/>
 
         <!--Save JSON feedback-->
-        <TextBlock Grid.Row="6" Grid.ColumnSpan="2"  x:Name="SaveFeedbackTextBox" Text=" "  TextWrapping="Wrap" Margin="20 0 20 0" FontSize="15" HorizontalAlignment="center"  VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="6" Grid.ColumnSpan="2"  x:Name="SaveFeedbackTextBox" Text=" "  TextWrapping="Wrap" Margin="12 0 12 0" FontSize="12" HorizontalAlignment="center"  VerticalAlignment="Center"/>
 
         <Button Grid.Row="7" Grid.Column="0" x:Name="ClearButton" Content="Clear"  Margin="20 0" FontSize="12"  FontWeight="Medium" BorderBrush="Gray" Click="Clear_Click" Cursor="Hand"/>
 

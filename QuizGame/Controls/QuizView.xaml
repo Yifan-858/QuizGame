@@ -25,7 +25,7 @@
 
         <!--Logo-->
         <Border Grid.Row="0" Grid.Column="0" Margin="2" >
-            <TextBlock Text="Quiz Game" FontSize="15" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c63719" />
+            <TextBlock Text="Quiz Game" FontSize="15" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#2a1b7d" />
         </Border>
 
         <!--Return Button-->
